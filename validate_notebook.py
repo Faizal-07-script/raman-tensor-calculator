@@ -9,7 +9,7 @@ import nbformat
 from IPython.core.interactiveshell import InteractiveShell
 from IPython.utils.capture import capture_output
 from ipywidgets.embed import dependency_state,embed_data
-P=Path(__file__).resolve().parent/'sources/notebook_v4.ipynb'
+P=Path(__file__).resolve().parent/'sources/notebook_v5.ipynb'
 book=nbformat.read(P,as_version=4);shell=InteractiveShell.instance();started=time.time()
 for cell in book.cells:
     if cell.cell_type!='code':continue
@@ -20,7 +20,7 @@ for cell in book.cells:
     assert 'Ready:' in captured.stdout and 'Next:' in captured.stdout
     if cell.metadata['code_cell_number']==1:
         revision=book.metadata['rotation_raman_revision']['download_revision']
-        assert f'Version 4 | Revision {revision} | Silicon (500) default' in captured.stdout
+        assert f'Version 5 | Revision {revision} | Silicon (500) default' in captured.stdout
     cell.execution_count=shell.execution_count-1;cell.outputs=[]
     stdout=captured.stdout
     if cell.metadata['code_cell_number']==22:
@@ -89,7 +89,7 @@ with capture_output():
 assert ns['state']['last_error'] is None
 book.metadata['widgets']={'application/vnd.jupyter.widget-state+json':embed_data([ns['app_view']],state=dependency_state([ns['app_view']]))['manager_state']}
 (P.parents[1]/'dist/downloads/Silicon_Startup_Polar_Plot.png').write_bytes(png)
-record=dict(status='passed',version='4',download_revision=revision,checks=ns['state']['validation']['checks'],
+record=dict(status='passed',version='5',download_revision=revision,checks=ns['state']['validation']['checks'],
     cell_completion_messages=22,
     example_input='Built-in cubic_fig1_config(0, "VV"): Si (500), T2g, d=1; no edits or external file required.',
     startup_test=dict(material='Si',point_group='Oh',hkl=[5,0,0],uvw=[0,-5,0],
@@ -106,12 +106,21 @@ record=dict(status='passed',version='4',download_revision=revision,checks=ns['st
     optical_reference=ns['state']['validation']['optical_reference'],
     inactive_circular_rule_fields='Noncircular profiles ignore inactive charge fields; circular profiles still reject invalid charges.',
     elapsed_seconds=round(time.time()-started,2))
-book.metadata['rotation_raman_revision']['validation']=record
+public_keys=['status','version','download_revision','startup_test','success_output',
+             'annotated_derivation','inactive_circular_rule_fields','elapsed_seconds']
+public_record={key:record[key] for key in public_keys}
+public_record.update(code_cells=22,checks_summary=[
+    'All 22 code cells execute and print their completion messages.',
+    'Silicon (500), VV startup agrees with the declared analytical intensity.',
+    'Geometry, complex tensor contractions, symmetry and numerical edge cases pass.',
+    'The mathematical trace retains symbol definitions and shared export equations.'
+])
+book.metadata['rotation_raman_revision']['validation']=public_record
 nbformat.validate(book);nbformat.write(book,P)
-(Path(__file__).resolve().parent/'notebook_verification.json').write_text(json.dumps(record,indent=2))
-print(json.dumps(record,indent=2),flush=True)
+(Path(__file__).resolve().parent/'notebook_verification.json').write_text(json.dumps(public_record,indent=2))
+print(json.dumps(public_record,indent=2),flush=True)
 
-assert ns['derivation_tabs'].selected_index == 0
+assert ns['derivation_tabs'].selected_index == 1
 assert ns['derivation_tabs'].get_title(0) == '1. Full mathematics'
 assert ns['derivation_tabs'].get_title(1) == '2. Explained derivation'
 assert ns['state']['derivation']['mathematics_markdown'].count('## Symbols and units') == 1

@@ -33,10 +33,10 @@ for (const entry of result.equations) if (entry.kind === 'equation') {
 for (const tex of equations) {
   katex.renderToString(tex, { displayMode: true, throwOnError: true, strict: 'ignore' });
 }
-if (catalog.version !== '4' || result.version !== '4') throw new Error('Unexpected release identity.');
+if (catalog.version !== '5' || result.version !== '5') throw new Error('Unexpected release identity.');
 if (!catalog.profiles.CUBIC_SIGMA.includes('σ⁺α')) throw new Error('Missing lowercase σ⁺α label.');
 const code = JSON.parse(read('dist/data/cells.json')).cells;
 if (!code[16].source.includes('4.1 Input θᵢ') || !code[16].source.includes('4.4 Detector βₛ')) throw new Error('Missing Greek input labels.');
 if (result.latex.full.includes('beta_{prime}')) throw new Error('Unformatted β′ in the exported derivation.');
 if (!result.latex.full.includes('beta^{\\prime}')) throw new Error('Missing β′ in the exported derivation.');
-console.log(`Version 4 notation: ${equations.length} equations typeset; lowercase σ⁺α and Greek input labels passed.`);
+console.log(`Version 5 notation: ${equations.length} equations typeset; lowercase σ⁺α and Greek input labels passed.`);

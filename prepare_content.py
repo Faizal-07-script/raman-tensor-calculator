@@ -15,7 +15,7 @@ DIST=PROJECT/'dist'
 DATA=DIST/'data'
 DOWNLOADS=DIST/'downloads'
 DATA.mkdir(exist_ok=True);DOWNLOADS.mkdir(exist_ok=True)
-notebook_path=SOURCE/'notebook_v4.ipynb'
+notebook_path=SOURCE/'notebook_v5.ipynb'
 notebook=json.loads(notebook_path.read_text())
 revision=notebook['metadata']['rotation_raman_revision']['download_revision']
 cells=[c for c in notebook['cells'] if c['cell_type']=='code']
@@ -43,10 +43,10 @@ for i,cell in enumerate(cells,1):
            for node in tree.body if isinstance(node,(ast.FunctionDef,ast.ClassDef,ast.AsyncFunctionDef))]
     content.append(dict(number=i,title=titles[i-1],tag=cell['metadata']['tags'][0],source=source,
         lines=len(source.splitlines()),symbols=nodes,sha256=hashlib.sha256(source.encode()).hexdigest()))
-(DATA/'cells.json').write_text(json.dumps(dict(version='4',revision=revision,source_sha256=source_hash,cells=content)))
+(DATA/'cells.json').write_text(json.dumps(dict(version='5',revision=revision,source_sha256=source_hash,cells=content)))
 
 selected=[i for i in range(2,23) if i not in [17,18,19,22]]
-prefix='''# Generated from the scientific cells of notebook version 4.
+prefix='''# Generated from the scientific cells of notebook version 5.
 # Rich notebook display imports are omitted; scientific functions are unchanged.
 import os
 os.environ['MPLBACKEND']='Agg'
@@ -76,7 +76,7 @@ example=ns['web_calculate'](json.dumps(catalog['examples'][catalog['default_exam
 canonical_startup=json.loads(example)['configuration']
 catalog['examples'][catalog['default_example']]['config']=canonical_startup
 (DATA/'catalog.json').write_text(ns['web_json'](catalog))
-for name in ['example_input_v4.json','silicon_startup_input_v4.json']:
+for name in ['example_input_v5.json','silicon_startup_input_v5.json']:
     (SOURCE/name).write_text(json.dumps(canonical_startup,indent=2)+'\n')
 (DATA/'reference-example.json').write_text(example)
 print('Native reference example generated.',flush=True)
@@ -90,8 +90,8 @@ feedback_path=PROJECT/'Saito-sensei feedback.md'
 if not feedback_path.is_file():
     feedback_path=PROJECT/'SAITO_FEEDBACK_AUDIT.md'
 shutil.copy2(feedback_path,DOWNLOADS/'SAITO_FEEDBACK_AUDIT.md')
-shutil.copy2(SOURCE/'example_input_v4.json',DOWNLOADS/'example_input_v4.json')
-shutil.copy2(SOURCE/'silicon_startup_input_v4.json',DOWNLOADS/'silicon_startup_input_v4.json')
+shutil.copy2(SOURCE/'example_input_v5.json',DOWNLOADS/'example_input_v5.json')
+shutil.copy2(SOURCE/'silicon_startup_input_v5.json',DOWNLOADS/'silicon_startup_input_v5.json')
 for name,figure in ns['WEB_STATE']['figures']:
     if name.startswith('polar_'):
         figure.savefig(DIST/(name+'.svg'),format='svg',bbox_inches='tight',transparent=True)
@@ -129,15 +129,15 @@ archive_paths={
 for name,path in archive_paths.items():shutil.copy2(path,DOWNLOADS/name)
 readme='''ROTATION RAMAN TENSOR CALCULATION — PYTHON DOWNLOADS
 
-Program: 261024 - Raman Tensor Rotation Ver 4.0
+Program: 261024 - Raman Tensor Rotation Ver 5.0
 Current version: 4. Run all 22 cells of the .ipynb in Jupyter or Colab.
 The matching .py file contains the complete notebook source for an IPython kernel.
 raman_engine.py contains the same scientific functions without notebook-only
 display imports; web_bridge.py supplies validated JSON/browser interfaces.
 
-Version 4 uses Greek symbols in the controls, guides and exports, and shorter
-instructions. The scientific calculations are unchanged. Optional website guides
-remain available from the User guide button.
+Version 5 uses Greek symbols in the controls, guides and exports, and shorter
+instructions. Use Review inputs to check the axes and optical states before
+calculating. The User guide button opens optional help.
 
 Newcomers: read QUICKSTART.md and use Restart kernel and Run All.
 Every code cell prints "Run completed successfully.", its number, what is ready
@@ -147,13 +147,14 @@ the reference equation and shows a short goal and five-step guide above the calc
 Its plot is in the Polar plots tab.
 No external input or manual code edit is needed. The Polar plots tab opens first.
 Tools are numbered 1-7 for the main workflow, with optional validation (8),
-comparisons (9), and the silicon benchmark (10). silicon_startup_input_v4.json
+comparisons (9), and the silicon benchmark (10). silicon_startup_input_v5.json
 records the Python startup inputs; Silicon_Startup_Polar_Plot.png is the checked
-startup figure. The website also starts with Si (500); example_input_v4.json
+startup figure. The website also starts with Si (500); example_input_v5.json
 records the same input configuration. Other material examples remain available.
 Symbols_And_References.md collects the symbol definitions, unit conventions and
 sources. Full mathematics places one short symbol list after all equations.
-Explained derivation keeps detailed definitions and sources after each equation.
+Explained derivation places English explanations on the left and complete
+mathematics on the right, with symbols defined when they first appear.
 The result ZIP contains both Markdown and LaTeX views.
 SAITO_FEEDBACK_AUDIT.md distinguishes implemented changes from the still-pending
 independent colleague review and documentation consultation with Kumar-san.
@@ -163,10 +164,10 @@ status, symbolic residuals or numerical tolerances. Cell 21 implements the
 25 source-reference procedures from QWP source reference and their generalization
 to the actual selected crystal/Jones run. Cells 16 and 19 export and display
 the same reports. Main Ag components and all existing intensity laws are unchanged.
-The uploaded original reference notebook is included as a separate, unmodified reference.
+Original reference notebooks are linked separately from the website.
 
-The references folder contains the unmodified optical implementation sources.
-The live website tutorial displays the exact current Version 4 code.
+This package contains the project program and its documentation.
+The live website tutorial displays the exact current Version 5 code.
 
 The site self-hosts its Python WebAssembly runtime and mathematical typesetting.
 Its first calculator start downloads the runtime into your browser. A web worker
@@ -179,19 +180,19 @@ Separate Ag Cartesian powers are diagnostics of one phonon and are not summed
 in the main figures. A coherent full-mode audit is exported separately.
 '''
 (DOWNLOADS/'README.txt').write_text(
-    f'Version 4 | Revision {revision} | Silicon (500) default\n\n'
-    'The recommended notebook filename includes V4, Si500, the revision and its source fingerprint.\n'
+    f'Version 5 | Revision {revision} | Silicon (500) default\n\n'
+    'Open 261024 - Raman Tensor Rotation Ver 5.0.ipynb.\n'
     'Cell 1 prints this same revision before preparing the environment.\n'
     'Open the newly downloaded file, then restart its kernel and Run All.\n'
     'The .py source has 22 # %% cell boundaries for editors that support Python cells.\n\n'+readme)
 with zipfile.ZipFile(DOWNLOADS/'All_Python_Programs.zip','w',zipfile.ZIP_DEFLATED) as archive:
-    for name in ['ROTATION_RAMAN_TENSOR_CALCULATION.ipynb','ROTATION_RAMAN_TENSOR_CALCULATION.py','raman_engine.py','web_bridge.py','sci.mplstyle','requirements.txt','README.txt','Optical_Methods_Guide.md','Symbols_And_References.md','QUICKSTART.md','SAITO_FEEDBACK_AUDIT.md','example_input_v4.json','silicon_startup_input_v4.json','Silicon_Startup_Polar_Plot.png']:
+    for name in ['ROTATION_RAMAN_TENSOR_CALCULATION.ipynb','ROTATION_RAMAN_TENSOR_CALCULATION.py','raman_engine.py','web_bridge.py','sci.mplstyle','requirements.txt','README.txt','Optical_Methods_Guide.md','Symbols_And_References.md','QUICKSTART.md','SAITO_FEEDBACK_AUDIT.md','example_input_v5.json','silicon_startup_input_v5.json','Silicon_Startup_Polar_Plot.png']:
         archive.write(DOWNLOADS/name,name)
-    for name in archive_paths:archive.write(DOWNLOADS/name,'references/'+name)
+    # Original third-party reference notebooks remain separate from the project ZIP.
 
 # Each published revision has a separate filename. Keep the stable names as
 # compatibility copies, but use the named revision for the website's main links.
-stem='261024 - Raman Tensor Rotation Ver 4.0'
+stem='261024 - Raman Tensor Rotation Ver 5.0'
 named_files={
     'notebook':(stem+'.ipynb','ROTATION_RAMAN_TENSOR_CALCULATION.ipynb'),
     'python':(stem+'.py','ROTATION_RAMAN_TENSOR_CALCULATION.py'),
@@ -205,7 +206,7 @@ with zipfile.ZipFile(DOWNLOADS/'All_Python_Programs.zip') as original:
         for entry in original.infolist():
             bundle.writestr(bundle_names.get(entry.filename,entry.filename),original.read(entry.filename))
 named_files['bundle']=(bundle_path.name,'All_Python_Programs.zip')
-release=dict(version='4',revision=revision,source_sha256=source_hash,code_cells=22,
+release=dict(version='5',revision=revision,source_sha256=source_hash,code_cells=22,
     default_input=dict(material='Si',hkl=[5,0,0],optics='CUBIC_VV'),files={})
 for key,(filename,canonical) in named_files.items():
     payload=(DOWNLOADS/filename).read_bytes()
@@ -224,9 +225,19 @@ for label,key in [('Download the current Python notebook','notebook'),('Download
 readme_path.write_text(readme_text)
 
 # Browser caches must see a new URL whenever first-party JavaScript or CSS changes.
+worker_fingerprint=hashlib.sha256((DIST/'engine-worker.js').read_bytes()).hexdigest()[:12]
+app_path=DIST/'app.js'
+app_text=app_path.read_text()
+app_text=re.sub(r'\./engine-worker\.js(?:\?[^\x27\x22\s]*)?', './engine-worker.js?v=5-'+worker_fingerprint, app_text)
+app_path.write_text(app_text)
 index=(DIST/'index.html').read_text()
-for name in ('app.js','content.js','optical-guide.js','user-guide.js','styles.css','user-guide.css'):
+index=re.sub(r' data-(?:full-site|calculator-site)="[^"]*"', '', index)
+index=index.replace('<body class="desktop-nav-hidden">', '<body class="desktop-nav-hidden" data-full-site="https://faizal-07-script.github.io/rotation-raman-tensor-calculation/" data-calculator-site="https://faizal-07-script.github.io/raman-tensor-calculator/">')
+for name in ('app.js','content.js','optical-guide.js','user-guide.js','styles.css','user-guide.css','calculator-ui.js','calculator.css'):
     fingerprint=hashlib.sha256((DIST/name).read_bytes()).hexdigest()[:12]
-    index=re.sub(re.escape('./'+name)+r'(?:\?[^"\s]*)?', './'+name+'?v=4-'+fingerprint,index)
+    index=re.sub(re.escape('./'+name)+r'(?:\?[^"\s]*)?', './'+name+'?v=5-'+fingerprint,index)
 (DIST/'index.html').write_text(index)
+calculator_page=index.replace('<title>Rotation Raman Tensor Calculation</title>', '<title>Raman Tensor Calculator</title>')
+calculator_page=calculator_page.replace('<body class="desktop-nav-hidden"', '<body class="desktop-nav-hidden calculator-only" data-calculator-only="true"')
+(DIST/'calculator.html').write_text(calculator_page)
 print('Prepared 22 cells,',sum(len(x['blocks']) for x in annotations),'annotated code blocks and Python downloads.',flush=True)

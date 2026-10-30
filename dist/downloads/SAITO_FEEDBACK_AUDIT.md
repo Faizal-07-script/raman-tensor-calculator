@@ -1,30 +1,22 @@
-# Saito-sensei feedback — Version 4 audit
+# Saito-sensei’s Feedback — Version 5
 
-Audit date: 2026-10-23. Baseline notebook: the preceding release before the feedback changes (GitHub main b670372fe576531d6c5bd1e11ae73adab2386e8e).
+Updated 31 October 2026.
 
-| Recommendation | Present before this update | Current status / evidence |
-| --- | --- | --- |
-| 1. Ask other people to run the unchanged program | Automated and browser checks existed; no independent person's test record was found. | **Pending independent review.** QUICKSTART.md now gives a fresh-kernel checklist, expected values and the information a tester should record. Automated checks here do not count as another person's review. |
-| 2. Ask Kumar-san how to document it | The supplied original Kumar notebook and source links existed. No documentation consultation record was found. | **Pending consultation.** No message has been sent to Kumar-san and no approval is claimed. Preserve the original reference notebook unchanged. |
-| 3. Print a completion message for every cell | Cells 1–21 had no saved visible output; Cell 22 displayed the interface and validation. | **Implemented.** Every one of the 22 code cells now prints its number and “Run completed successfully.” after execution. The text distinguishes loaded function definitions from executed model checks. |
-| 4. Explain what to input in the last cells | One-sentence cell introductions, UI field labels, a website tutorial and interactive guides existed. Notebook startup/input instructions were brief. | **Expanded.** Each of the 22 cells has Role, What to enter and After running explanations. The notebook and QUICKSTART.md explain numbered actions, input formats and units. Every calculated equation now carries symbol definitions and a source/algebra note in the notebook, website and exports. |
-| 5. Include example data so newcomers can just run it | Cell 22 already loaded, calculated and validated slide_component_config(); six selectable examples existed. | **Implemented; Python startup updated to silicon.** Cell 22 now loads Si (500), T2g, d=1, VV, checks all 721 samples against the reference equation and shows a short guide above the calculator and its plot in Polar plots. The matching silicon JSON, expected values and no-edit walkthrough are included. The website uses the same Silicon (500) starting example. |
+| Feedback | Status and where to check |
+| --- | --- |
+| Print a message after every cell | Done. All 22 cells print “Run completed successfully.”, the cell number, what is ready and the next step. |
+| Explain what to enter, especially in the last cells | Done. Each cell has short input and output notes. QUICKSTART.md lists the controls, units and expected starting values. |
+| Supply an example that runs without editing the code | Done. Cell 22 loads silicon (500), T2g, d=1, VV and shows its polar plot. Matching input JSON files are included. |
+| Show X, Y and Z, and construct the complete transformation matrix | Done. X is selected in the surface; Y is calculated from Z × X. Input review shows all three axes, T, TᵀT and det(T)=+1. |
+| Show the preparation before the long intensity calculation | Done. Review inputs checks the geometry, tensors and optical states without running an intensity scan. |
+| Number the operations so they can be discussed in a meeting | Done. Input groups and mathematical operations have step numbers. |
+| Define symbols before they are used | Done. The explained view defines new symbols beside their first equation. The complete symbol list is also exported. |
+| Make the analytical intensity easy to find | Done. The final equation appears beside the plots and in the last mathematical section. The derivation uses the original tensor coefficients, without K/C/D aliases. |
+| Compare numerical and analytical results | Automated checks compare the explicit final expressions with the matrix calculation. The silicon benchmark covers 18 cases. A complete, equation-by-equation comparison with all results of Ni-san’s paper is still pending. |
+| Ask other people to test the program | Pending independent review. QUICKSTART.md contains the fresh-kernel test and the information each tester should record. Automated checks do not replace a colleague’s run. |
+| Ask Kumar-san about program documentation | Pending consultation. The current documentation is ready for review; no consultation or approval is claimed. |
 
-## Numbered tools
-
-1. Model, optical method and explicit example loading.
-2. Material, point group, modes and complex coefficients (or effective-source inputs).
-3. Orientation and lattice metric.
-4. Jones states and active optical controls.
-5. Display and angular sampling.
-6. Calculate the current inputs.
-7. Inspect/export a successful result.
-8. Optional model/source validation.
-9. Optional frozen-input comparisons.
-10. Optional 18-case silicon benchmark.
-
-The same main numbers are used in notebook controls and calculator input groups. Subnumbers identify fields/actions; h,k,l, u,v,w and lattice triples share their group number. Navigation labels remain separate from input-step numbers.
-
-## Scope of the change
-
-The silicon revision changes the Python startup example and its display, documentation and checks. The website starts with Silicon (500), VV, and shows a symbol/unit table beneath every calculated equation. The existing navigation and page layout are retained. No tensor forms, coordinate rotations, Jones contractions or intensity equations are changed. Notebook-only display and completion messages are omitted from the extracted browser engine. The source notebook, downloadable notebook, full Python source, matching tutorial and program ZIP are regenerated together. A completion message establishes execution of that cell; model checks and independent review have separate evidence.
+The two websites and Python download use the same scientific functions.
+The calculator-only website has the numbered input cards, optional guide,
+input review, plots and both mathematical views. The full website also keeps
+the introduction, tutorials and references.

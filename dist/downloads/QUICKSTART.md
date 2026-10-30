@@ -1,18 +1,18 @@
-# Version 4 — first run and numbered tools
+# Version 5 — first run and numbered tools
 
-**Revision 2026-10-24-r1 — Silicon (500) startup**
+**Revision 2026-10-31-r1 — Silicon (500) startup**
 
 Run Cell 1 first. Its first output must read:
 
 ```text
-Version 4 | Revision 2026-10-24-r1 | Silicon (500) default
+Version 5 | Revision 2026-10-31-r1 | Silicon (500) default
 ```
 
-Open the newly downloaded notebook named `261024 - Raman Tensor Rotation Ver 4.0.ipynb`. If this revision line is missing, compare the file you opened with the current download. Restart its kernel and run all 22 cells. The success messages appear below each executed cell; the Silicon polar plot appears in Cell 22.
+Open the newly downloaded notebook named `261024 - Raman Tensor Rotation Ver 5.0.ipynb`. If this revision line is missing, compare the file you opened with the current download. Restart its kernel and run all 22 cells. The success messages appear below each executed cell; the Silicon polar plot appears in Cell 22.
 
 Use **Jupyter Notebook / JupyterLab or Google Colab** with a Python kernel and widget support. The `.ipynb` is the recommended entry point; running the `.py` with an ordinary terminal does not provide the notebook interface. Install the packages in `requirements.txt` in the same kernel if an import is missing.
 
-1. Open the current `261024 - Raman Tensor Rotation Ver 4.0.ipynb` notebook and choose **Restart kernel and Run All**. Run all **22 code cells in order**. Do not start from Cell 17 or Cell 22 in a fresh kernel.
+1. Open the current `261024 - Raman Tensor Rotation Ver 5.0.ipynb` notebook and choose **Restart kernel and Run All**. Run all **22 code cells in order**. Do not start from Cell 17 or Cell 22 in a fresh kernel.
 2. Each code cell prints **“Run completed successfully.”**, its cell number, what is ready and which cell to run next. The explanation above each code cell states its role, what to enter and what to expect. Cells 1–21 primarily define functions or controls; their message confirms execution, while the numerical/model checks are reported separately.
 3. Cell 22 checks **silicon (500), VV** and shows a short guide above the calculator; the plot is in the Polar plots tab. The **Silicon (500), VV reference frame** example is loaded automatically, and the **Polar plots** result tab is selected. No typing, `input()` prompt, external data file or coefficient editing is required for this first run.
 4. Inspect **Polar plots**, **Intensity values** and **Validation**. The first result has **one T2g channel**, combining the intensities of three unresolved orthogonal phonon partners, and **721 samples** from 0° through 360°. Cell 22 compares every sample with the reference equation below before opening the results. View the current plot in the Polar plots tab.
@@ -54,14 +54,14 @@ Use an absolute tolerance of 1e-10 for the sampled values and reference curve. T
 
 The first run shows VV. To compare VV and VH, choose the paired linear profile (`LINEAR_PAIR`) in 1.2, then press 6. The other examples remain available through 1.3 and 1.4.
 
-`silicon_startup_input_v4.json` and `example_input_v4.json` contain the same Silicon (500), VV starting inputs for Python and the website. The other material examples remain available. The (500) label follows the cubic benchmark; its surface-normal direction is parallel to (100).
+`silicon_startup_input_v5.json` and `example_input_v5.json` contain the same Silicon (500), VV starting inputs for Python and the website. The other material examples remain available. The (500) label follows the cubic benchmark; its surface-normal direction is parallel to (100).
 
 ## Read the derivation
 
 Open **Mathematical derivation** in the notebook or **Mathematical steps** on the website.
 
 1. **Full mathematics**: all derivation equations, then one short list of the symbols and their units.
-2. **Explained derivation**: the same equations with detailed definitions, units and source notes below each one.
+2. **Explained derivation**: English explanations and symbol definitions on the left, with complete matrix calculations on the right. Symbols are defined at first use. The LaTeX export uses the same two-column order.
 
 Both views use the same calculation. The result ZIP includes `calculation_mathematics.md` and `calculation_full.tex`, plus `calculation_explained.md` and `calculation_explained.tex`. `calculation_steps.md` is a copy of Full mathematics. `Symbols_And_References.md` retains the complete reference glossary.
 

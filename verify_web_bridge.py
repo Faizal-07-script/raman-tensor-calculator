@@ -24,7 +24,7 @@ def run(config):
     original = copy.deepcopy(config)
     result = json.loads(ns["web_calculate"](json.dumps(config)))
     assert config == original
-    assert result["version"] == "4"
+    assert result["version"] == "5"
     assert result["equation_count"] > 0
     assert result["checks"]
     for channel in result["channels"]:
@@ -33,7 +33,7 @@ def run(config):
         assert min(channel["points"]) >= -1e-13
     return result
 
-sample = json.loads((ROOT / "dist/downloads/example_input_v4.json").read_text())
+sample = json.loads((ROOT / "dist/downloads/example_input_v5.json").read_text())
 sample_result = run(sample)
 expected_sample = json.loads((ROOT / "dist/data/reference-example.json").read_text())
 assert sample_result["equation_count"] == expected_sample["equation_count"]
@@ -113,7 +113,7 @@ with zipfile.ZipFile(io.BytesIO(ns["web_export_benchmark"]())) as z:
         assert len(rows) == 362
 checks.append("Silicon benchmark: 18 calculated cases pass their independent identities and OriginLab export.")
 
-record = dict(status="passed", version="4", checks=checks,
+record = dict(status="passed", version="5", checks=checks,
               elapsed_seconds=round(time.monotonic()-started,2),
               engine_sha256=hashlib.sha256((ROOT/"dist/raman_engine.py").read_bytes()).hexdigest())
 (ROOT/"dist/data/web-verification.json").write_text(json.dumps(record,indent=2))

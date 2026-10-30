@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "version": "4",
+  "version": "5",
   "startup": {
     "material": "Si",
     "surface": [
@@ -13,41 +13,41 @@
   "examples": [
     {
       "key": "SLIDE",
-      "equations": 272,
-      "definitions": 970
+      "equations": 158,
+      "definitions": 494
     },
     {
       "key": "QWP_3D",
-      "equations": 409,
-      "definitions": 1237
+      "equations": 263,
+      "definitions": 700
     },
     {
       "key": "QWP_2D",
-      "equations": 54,
-      "definitions": 262
+      "equations": 41,
+      "definitions": 203
     },
     {
       "key": "LINEAR_BP",
-      "equations": 1137,
-      "definitions": 3475
+      "equations": 577,
+      "definitions": 1487
     },
     {
       "key": "CIRCULAR_MOS2",
-      "equations": 173,
-      "definitions": 559
+      "equations": 138,
+      "definitions": 431
     },
     {
       "key": "SI_500",
-      "equations": 169,
-      "definitions": 492
+      "equations": 129,
+      "definitions": 369
     },
     {
       "key": "SI_530",
-      "equations": 169,
-      "definitions": 526
+      "equations": 129,
+      "definitions": 403
     }
   ],
-  "total_example_equations": 2383,
+  "total_example_equations": 1435,
   "profiles": [
     "CUBIC_VV",
     "CUBIC_VH",

@@ -29,11 +29,12 @@ self.onmessage = async event => {
     if (!pythonReady) pythonReady = initializePython();
     const py = await pythonReady;
     let result, binary = false;
-    if (type === 'init') result = {ready: true, version: '4'};
+    if (type === 'init') result = {ready: true, version: '5'};
     else {
       py.globals.set('web_input_json', JSON.stringify(payload));
       const expressions = {
         calculate: 'web_calculate(web_input_json)',
+        preflight: 'web_preflight(web_input_json)',
         export: 'web_export()',
         figure: 'web_download_figure(json.loads(web_input_json)["index"], json.loads(web_input_json)["extension"])',
         validate: 'web_validate()',

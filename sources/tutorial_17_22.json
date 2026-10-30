@@ -13,155 +13,747 @@
     "blocks": [
       {
         "start_line": 1,
-        "end_line": 7,
-        "title": "Import the widget library and set label layout",
-        "explanation": "ipywidgets supplies notebook selectors, numerical fields, buttons and output areas. STYLE gives descriptions the width they need rather than truncating scientific labels.",
-        "why": "Widget presentation is kept separate from the matrix engine, so a different interface can reuse the calculations.",
-        "check": "Importing this cell alone creates no Raman result."
+        "end_line": 1,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 3,
+        "end_line": 3,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 5,
+        "end_line": 5,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 8,
         "end_line": 15,
-        "title": "Build a consistent dropdown",
-        "explanation": "dropdown() receives the displayed label/value pairs, an initial internal value and a description. It returns an 800-pixel-wide dropdown with max_width=100% so the container can shrink.",
-        "why": "Using one constructor keeps selector behavior and label layout consistent. The internal value, rather than the displayed prose, enters the calculation.",
-        "check": "The initial value must be one of the provided option values."
+        "title": "Dropdown",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 18,
         "end_line": 21,
-        "title": "Build a numerical field",
-        "explanation": "number() converts the default to float and returns a FloatText with a descriptive label and a compact width.",
-        "why": "The UI accepts ordinary numerical input; later exact() and complex_parameter() perform the scientific conversion and validation.",
-        "check": "A visible decimal is an input value, not a fitted tensor coefficient."
+        "title": "Number",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 24,
+        "end_line": 31,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 32,
+        "end_line": 34,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 35,
+        "end_line": 47,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 48,
         "end_line": 50,
-        "title": "Separate model, optics and example selection",
-        "explanation": "model_pick selects a full 3D crystal tensor or the original effective 2D optical source. optics_pick uses GENERAL_PROFILES. example_pick only selects a named configuration; load_example_button explicitly applies it.",
-        "why": "Changing a report/example label must not silently select a different experiment. Tensor dimensionality and optical states are distinct physical choices.",
-        "check": "Selecting an example in the dropdown does not load it until the button is pressed."
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 51,
+        "end_line": 56,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 57,
         "end_line": 62,
-        "title": "Record a case label and input note",
-        "explanation": "case_label identifies a run; input_note records assumptions such as illustrative lattice ratios or coefficients. Both fields are exported with the configuration.",
-        "why": "A curve needs a reproducible description of its input assumptions, especially when comparing different surfaces or publications.",
-        "check": "Editing either field invalidates the displayed result when observers are connected in Cell 22."
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 63,
+        "end_line": 63,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 64,
+        "end_line": 69,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 70,
+        "end_line": 70,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 71,
+        "end_line": 73,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 74,
+        "end_line": 74,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 75,
+        "end_line": 85,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 86,
+        "end_line": 91,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 92,
+        "end_line": 94,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 95,
         "end_line": 95,
-        "title": "Declare material, symmetry, branch and coefficient controls",
-        "explanation": "material_pick reads the material library; group_pick exposes the 21 implemented point groups plus a custom Cartesian tensor. mode_pick selects phonon branches. coef_accordion later holds each branch coefficient magnitude and phase. ag_relation permits explicit D2h diagonal equalities, and custom_tensor accepts a 3-by-3 numerical JSON matrix.",
-        "why": "The tensor form follows symmetry, while its numerical coefficients remain branch-specific inputs. Equality relations are optional constraints, not automatic fitting assumptions.",
-        "check": "Named material presets lock their declared point group; choose the General material to select a different group or a custom tensor."
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 96,
+        "end_line": 96,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 97,
+        "end_line": 97,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 98,
+        "end_line": 101,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 102,
+        "end_line": 105,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 106,
+        "end_line": 106,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 107,
+        "end_line": 107,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 108,
         "end_line": 108,
-        "title": "Declare surface indices, an in-plane reference and frame rotation",
-        "explanation": "surface_options extends the basic presets with (500) through (550). hkl_fields describe a reciprocal-lattice surface normal; uvw_fields describe a direct-lattice in-plane direction. auto_x enables a projected Cartesian reference, normal_pick selects the normal side, and \u03c8 is the frame angle.",
-        "why": "A surface alone does not determine the in-plane zero angle. The normal side and frame angle complete the measurement frame used by T.",
-        "check": "For an explicit in-plane direction, h*u+k*v+l*w must equal zero. The frame angle \u03c8 is not the optical scan angle."
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 109,
         "end_line": 122,
-        "title": "Provide the lattice metric",
-        "explanation": "Six fields hold a0, b0, c0 and the three cell angles. The example starts with a unity orthogonal metric.",
-        "why": "The physical normal is proportional to L^(-T)(h,k,l), so noncubic length ratios affect tilted-surface geometry. Tensor components remain Cartesian.",
-        "check": "Lengths must use one common unit; replace illustrative noncubic ratios with values for the sample."
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 123,
+        "end_line": 131,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 132,
+        "end_line": 132,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 133,
+        "end_line": 133,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 134,
         "end_line": 134,
-        "title": "Provide direct Jones states and angular zeros",
-        "explanation": "direct_widgets contains the incident mixing angle and phase, the detector mixing-angle zero and phase. theta_zero shifts a co-rotating linear scan; analyzer_zero shifts the direct linear detection scan.",
-        "why": "Explicit states and angle origins make comparisons reproducible. A fixed profile ignores inactive direct-state controls instead of borrowing their values.",
-        "check": "The direct-state convention is (cos(\u03b8), exp(i*\u03b2)*sin(\u03b8)); all field angles here are in degrees."
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 135,
+        "end_line": 143,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 144,
         "end_line": 150,
-        "title": "Keep the original effective source inputs explicit",
-        "explanation": "source_widgets declares real a and A and the phase angles \u03b4 and \u03c6. source_box states that the original 2D source has no crystal-orientation parameter.",
-        "why": "This reference model can be checked faithfully without treating its antisymmetric entries as a material tensor.",
-        "check": "In the original 2D model, changing hkl must not change the calculated source curve."
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 151,
+        "end_line": 153,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 154,
+        "end_line": 154,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 155,
+        "end_line": 155,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 156,
+        "end_line": 161,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 162,
+        "end_line": 162,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 163,
+        "end_line": 166,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 167,
+        "end_line": 169,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 170,
         "end_line": 170,
-        "title": "Separate circular-state selection from conditional rule inputs",
-        "explanation": "circular_spin selects a fixed laboratory circular basis label. N, incident OAM, phonon charges, optional absorption charge and the thin-2D assumption checkbox belong to the separate rule check. optical_preview will display the actual incident and effective detector vectors.",
-        "why": "A necessary angular-momentum congruence does not provide a quantitative vortex-beam intensity. The plane-wave Jones calculation and the conditional rule must remain distinguishable.",
-        "check": "The OAM field is labelled rule only. Changing it must not secretly mask or reshape a Jones intensity curve."
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 171,
         "end_line": 171,
-        "title": "Optical-profile guide and source correspondence",
-        "explanation": "The guide records preparation, return optics, sample detector, scan, amplitude, intensity and source scope for the selectable optical profiles. The common-tensor example is computed through optical_chain and the same Jones contraction; no curve is aligned or rescaled to resemble another method.",
-        "why": "Different optical states are different experiments. Their explicit states distinguish a continuous analyzer scan from a fixed circular channel or an effective reference-state parameterization.",
-        "check": "Compare states with optical_chain. Exact symbolic tests must reproduce the p/q identities, custom-Jones matches and constant fixed circular channels. Source-specific statements identify their reference; other identities are program derivations."
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 172,
+        "end_line": 175,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 176,
+        "end_line": 178,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 179,
+        "end_line": 179,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 180,
+        "end_line": 180,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 181,
         "end_line": 186,
-        "title": "Declare display and sampling options",
-        "explanation": "normalize uses one common maximum for every displayed contribution of one mode, including paired VV/VH channels. Cartesian plots, the 3D frame and the full steps are display choices. points includes both 0 and 360 degrees for the selected angular spacing.",
-        "why": "Common normalization preserves relative component strength. Sampling determines the exported grid, while analytic harmonics determine continuous extrema.",
-        "check": "721 samples means 0.5-degree spacing over the inclusive 0\u2013360-degree interval."
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 187,
+        "end_line": 192,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 193,
+        "end_line": 199,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 200,
+        "end_line": 204,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 205,
+        "end_line": 205,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 206,
+        "end_line": 206,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 207,
+        "end_line": 207,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 208,
+        "end_line": 208,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 209,
+        "end_line": 211,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 212,
+        "end_line": 212,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 213,
+        "end_line": 213,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 214,
+        "end_line": 214,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 215,
+        "end_line": 215,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 216,
+        "end_line": 216,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 217,
         "end_line": 217,
-        "title": "Create actions and comparison controls",
-        "explanation": "The Calculate button initiates physics; export and symbolic-LaTeX buttons start disabled. Comparison controls choose a saved channel and normalization. status reports the current result state, and style_note names the actual installed font.",
-        "why": "An export should be enabled only after a successful calculation, and the requested font should not be confused with a fallback font actually used.",
-        "check": "The export button cannot create a valid result from an uncalculated form."
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 218,
+        "end_line": 218,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 219,
+        "end_line": 223,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 224,
         "end_line": 236,
-        "title": "Allocate independent result containers",
-        "explanation": "Eleven Output widgets receive the mathematical trace, figures, table, frame, audits, validation, LaTeX, downloads, comparisons, tensor library and source links. A separate output belongs to the cubic benchmark.",
-        "why": "Dedicated containers let callbacks replace one view without mixing it into another or leaving previous output above a new result.",
-        "check": "The output widgets hold rendered views; the state dictionary holds the underlying scientific snapshot."
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 237,
+        "end_line": 237,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 238,
+        "end_line": 238,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 239,
+        "end_line": 239,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 240,
+        "end_line": 240,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 241,
+        "end_line": 241,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 242,
+        "end_line": 242,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 243,
+        "end_line": 243,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 244,
+        "end_line": 249,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 250,
+        "end_line": 250,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 251,
+        "end_line": 253,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 254,
+        "end_line": 258,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 259,
+        "end_line": 263,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 264,
+        "end_line": 268,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 269,
+        "end_line": 269,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 270,
+        "end_line": 270,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 271,
+        "end_line": 271,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 272,
+        "end_line": 272,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 273,
+        "end_line": 273,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 274,
+        "end_line": 274,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 275,
         "end_line": 275,
-        "title": "Declare the fixed silicon benchmark controls",
-        "explanation": "The benchmark has one shared coefficient magnitude, angular spacing, six requested surfaces and three protocols. Calculate, inspect and export actions are separate; inspection loads one computed benchmark configuration into the main calculator.",
-        "why": "The fixed reference study should remain a verifiable benchmark rather than silently turning into an arbitrary-material demonstration.",
-        "check": "All 18 cases use the same common d scale and retain all three complete T2g partners."
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 276,
-        "end_line": 308,
-        "title": "Map twelve result tabs to their containers",
-        "explanation": "tab_names establishes the order; tab_index provides stable name-to-index lookup. The Tab children list uses the matching Output widgets and benchmark panel, then a loop applies each label.",
-        "why": "Callbacks can select a tab by meaning rather than scattering unexplained numeric indices through the code.",
-        "check": "The order of tab_names and children must remain synchronized."
+        "end_line": 287,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 309,
-        "end_line": 323,
-        "title": "Initialize result state and UI bookkeeping",
-        "explanation": "state starts with no run and contains the figures, derivation, archive, validation, error, comparison snapshots and benchmark objects. ui stores transaction status, coefficient widgets, definitions and the one-time wiring flag.",
-        "why": "Calculated results should not be reconstructed by reading a partly edited form. Keeping UI flags separate from result data makes that boundary visible.",
-        "check": "state[\"run\"] becomes the source for plots and exports only after Calculate succeeds."
+        "start_line": 288,
+        "end_line": 301,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 325,
-        "end_line": 325,
-        "title": "Confirm that this cell finished executing",
-        "explanation": "The final print statement reports the code-cell number, the phrase \u201cRun completed successfully.\u201d and the functions or controls that are now ready. It is reached only if the preceding statements finish without an uncaught exception.",
-        "why": "Definition cells otherwise run silently, which can be confusing for a new user. Execution status is separate from the scientific validation results in Cell 22.",
-        "check": "Run Cells 1\u201317 in order and confirm the Cell 17/22 message. Model/source checks must be inspected separately in Validation."
+        "start_line": 302,
+        "end_line": 302,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 303,
+        "end_line": 318,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 319,
+        "end_line": 320,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 321,
+        "end_line": 334,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 335,
+        "end_line": 335,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 337,
+        "end_line": 337,
+        "title": "Prepare 17 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       }
     ],
     "pitfalls": [
@@ -184,195 +776,187 @@
     "blocks": [
       {
         "start_line": 1,
+        "end_line": 1,
+        "title": "Source note",
+        "explanation": "@contextmanager",
+        "why": "Document the following operation.",
+        "check": "Read together with the adjacent source block."
+      },
+      {
+        "start_line": 2,
         "end_line": 9,
-        "title": "Batch a coherent multi-field update",
-        "explanation": "The context manager saves the previous busy flag, sets it while a preset is loaded, yields to the caller and restores the flag in finally. Nested transactions restore their previous state correctly.",
-        "why": "Observers fire when widget values change. Without a transaction they could react to an incomplete combination of old and new inputs; finally also restores the flag if loading fails.",
-        "check": "The busy guard suppresses input callbacks during a batch; it is not a parallel-computation lock."
+        "title": "Form transaction",
+        "explanation": "Batch a preset update so observers do not interpret partial forms as active inputs.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 12,
         "end_line": 28,
-        "title": "Apply only the selected diagonal equality",
-        "explanation": "For D2h Ag, links maps each constrained coefficient to its source. Dependent magnitude and phase fields are disabled, then both values are copied inside a transaction. Free inputs leave all coefficients independent.",
-        "why": "The displayed controls must show exactly the relation used, including relative phase. A hidden assignment of b=c or a=b would otherwise change the experiment silently.",
-        "check": "Changing a copied source coefficient should update all linked dependent fields; free leaves them editable."
+        "title": "Synchronize ag relation",
+        "explanation": "Make selected equality constraints visible by copying and disabling dependent fields.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 31,
         "end_line": 36,
-        "title": "Refresh constraints and invalidate the old run",
-        "explanation": "The callback exits during a transaction; otherwise it applies the selected Ag relation and calls invalidate().",
-        "why": "A coefficient change can alter both the magnitude and angular shape of a coherent response. Previously calculated plots and downloads must no longer look current.",
-        "check": "This callback does not calculate a replacement curve; the user presses Calculate next."
+        "title": "On coefficient change",
+        "explanation": "Apply only the equality constraint explicitly selected by the user, then invalidate.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 39,
         "end_line": 59,
-        "title": "Show selected branch coefficient panels",
-        "explanation": "Obsolete layout containers are closed while the actual numeric fields are retained. For each selected branch, a new panel displays its magnitude/phase pairs. Accordion titles are rebuilt, the first visible panel is opened and the result is invalidated.",
-        "why": "Changing the visible branch selection should not reset a coefficient that the user has already entered. Closing obsolete wrappers avoids accumulating notebook display objects.",
-        "check": "Deselecting and reselecting a branch should preserve its fields until a material/group rebuild occurs."
+        "title": "Update visible modes",
+        "explanation": "Show coefficient panels for selected branches without changing any tensor coefficient.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 62,
         "end_line": 102,
-        "title": "Generate the form from the tensor library",
-        "explanation": "Old coefficient widgets are closed. definitions_for() supplies the actual selected branch templates; parameters_for() discovers their independent symbols. Each symbol gets magnitude/phase fields and an observer. The mode list, optional equality/custom controls and tensor-library display are rebuilt.",
-        "why": "The form should follow the same definitions used by the calculation engine, avoiding a manually maintained coefficient list that could omit a symmetry-allowed parameter.",
-        "check": "The number of complete tensors displayed for a family indicates phonon partners, not the number of free tensor coefficients."
+        "title": "Populate definitions",
+        "explanation": "Rebuild branch coefficient fields from the selected material/point-group templates.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 103,
-        "end_line": 107,
-        "title": "Mark the input-handling section",
-        "explanation": "The standalone string documents the boundary between coefficient-panel helpers and the remaining general input callbacks. It has no computational effect.",
-        "why": "A source walkthrough should distinguish explanatory strings from statements that alter inputs or results.",
-        "check": "Executing this string cannot change the selected material or intensity."
+        "start_line": 105,
+        "end_line": 105,
+        "title": "Prepare 18 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 108,
-        "end_line": 123,
-        "title": "Remove an obsolete scientific snapshot",
-        "explanation": "Close the old figure handles, clear run/derivation/report/archive state, disable export/LaTeX/comparison-add actions and empty the result containers. Saved comparison snapshots are deliberately retained.",
-        "why": "A change in the form must not leave old plots or downloads presented as the result of new inputs. Closing figures also releases plotting resources.",
-        "check": "After clearing, state[\"run\"] is None and result export is disabled."
+        "end_line": 125,
+        "title": "Clear result",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 126,
-        "end_line": 131,
-        "title": "Mark edited inputs as needing calculation",
-        "explanation": "During a form transaction the callback returns immediately. Otherwise it clears a previous run when one exists and displays a status message explaining that a fresh calculation is required.",
-        "why": "Separating edit handling from calculation avoids repeated symbolic work for every keystroke and prevents stale results from being exported.",
-        "check": "Editing a physical field should remove the current result but preserve explicitly saved comparisons."
+        "start_line": 128,
+        "end_line": 133,
+        "title": "Invalidate",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 134,
-        "end_line": 136,
-        "title": "Choose a conventional illustrative metric",
-        "explanation": "Trigonal and hexagonal groups receive the conventional hexagonal setting with \u03b3=120 degrees; other groups receive an orthogonal unity metric as a starting template.",
-        "why": "A point-group tensor setting must be paired with an appropriate indexing convention. These are illustrative ratios, not a lookup of measured material lattice constants.",
-        "check": "A monoclinic or triclinic user may still need to enter the actual lengths and angles."
+        "start_line": 136,
+        "end_line": 138,
+        "title": "Lattice template",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 139,
-        "end_line": 159,
-        "title": "Load symmetry and coefficient fields for a material",
-        "explanation": "The material entry provides its declared group, metric, space-group label and note. Named materials lock the group; General leaves it selectable. The function resets Ag equality to free and rebuilds the definitions and coefficient controls.",
-        "why": "A material preset should define its tensor setting transparently. It must not retain a restrictive coefficient equality from a previous material.",
-        "check": "The local previous_group assignment is unused bookkeeping and has no numerical effect."
+        "start_line": 141,
+        "end_line": 161,
+        "title": "Load material fields",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 162,
-        "end_line": 172,
-        "title": "Change the material without changing the optical experiment",
-        "explanation": "Inside one transaction, load_material_fields() updates the tensor setting, default metric and labels. The comment explicitly preserves hkl, uvw, normal side, frame angle and optical method. Afterward the old result is invalidated.",
-        "why": "Material and optics are independent physical inputs. Switching material should not secretly select another detector configuration to make curves appear similar.",
-        "check": "After a material change, review the illustrative coefficient and lattice defaults before calculating."
+        "start_line": 164,
+        "end_line": 174,
+        "title": "On material",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 175,
-        "end_line": 183,
-        "title": "Load the selected general symmetry setting",
-        "explanation": "A transaction sets the conventional metric template, returns the Ag equality selector to free and recreates coefficients from the selected group; then the previous result is invalidated.",
-        "why": "Changing symmetry can change the allowed tensor entries and phonon partners, so stale fields must be replaced.",
-        "check": "The group selector is intended to be changed under the General material."
+        "start_line": 177,
+        "end_line": 185,
+        "title": "On group",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 186,
-        "end_line": 196,
-        "title": "Load an explicit surface and in-plane preset",
-        "explanation": "If the selection is a known preset, copy both its hkl and uvw tuple inside a transaction. A Custom hkl selection leaves the manually entered values intact. In either case the old result becomes stale.",
-        "why": "The in-plane reference belongs with the surface preset; it supplies the angular zero needed in addition to the normal.",
-        "check": "Selecting (5k0) loads its associated in-plane direction (k,-5,0), which satisfies the zone condition."
+        "start_line": 188,
+        "end_line": 198,
+        "title": "On surface",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 199,
-        "end_line": 207,
-        "title": "Keep the preset label honest after a manual hkl edit",
-        "explanation": "The function compares the entered hkl values with the currently selected preset. If they differ, it changes the label to Custom hkl inside a transaction and invalidates the result.",
-        "why": "A visible preset label should not claim that manually edited indices still describe that preset.",
-        "check": "Editing uvw is handled by ordinary invalidation, while this callback specifically checks hkl."
+        "start_line": 201,
+        "end_line": 209,
+        "title": "On manual indices",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 210,
-        "end_line": 213,
-        "title": "Enable or disable manual in-plane indices",
-        "explanation": "The uvw fields are disabled when automatic X is enabled and re-enabled when it is disabled; the result is then invalidated.",
-        "why": "An inactive manual direction should not appear to be an active physical input. In the collected configuration automatic X is represented by uvw=None.",
-        "check": "Automatic X is a coordinate reference selected by the geometry code, not a measured in-plane crystallographic direction."
+        "start_line": 212,
+        "end_line": 215,
+        "title": "On auto x",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 216,
-        "end_line": 239,
-        "title": "Parse only the active rule inputs and preserve angular offsets",
-        "explanation": "The first branch checks the selected optical profile. If it is not a CIRCULAR_* profile, the function returns default circular metadata together with the active exact linear-scan and direct-analyzer zeros, without reading hidden charge fields. For an active circular profile, comma-separated phonon charges are parsed as strict integers, the list must be nonempty, and an absorption charge is parsed only when present. The returned metadata also records the circular label, cyclic order, incident OAM and explicit thin-2D scope declaration.",
-        "why": "Validation should follow the active experiment. An invalid or cleared hidden circular-charge field must not block VV, VH, QWP or direct-Jones calculations, while the circular rule must retain strict checks when selected. The angular offsets are retained in either branch because those are used by their corresponding optical profiles.",
-        "check": "Clear the circular charge field, select VV and calculate: the inactive field should be ignored. Select an active circular profile with the same empty field: the explicit validation error should still be raised."
+        "start_line": 218,
+        "end_line": 241,
+        "title": "Collect paper parameters",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 216,
-        "end_line": 221,
-        "title": "Active-profile guard: return before reading hidden circular fields",
-        "explanation": "The startswith(\"CIRCULAR_\") condition distinguishes the three active circular-channel profiles from the other optical protocols. A noncircular profile returns a fresh metadata dictionary expanded from default_paper_parameters(\"CIRCULAR\"), then overrides \u03b80_deg and analyzer_zero_deg from their active numerical fields.",
-        "why": "A user can leave an invalid value in a control that later becomes hidden. Ignoring that inactive control prevents an unrelated form state from changing whether the selected optical calculation can run.",
-        "check": "The early return must occur before splitting circular_charges.value or parsing circular_dm.value."
+        "start_line": 244,
+        "end_line": 279,
+        "title": "On optics",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 222,
-        "end_line": 239,
-        "title": "Active circular profile: strictly validate rule metadata",
-        "explanation": "For CIRCULAR_* profiles, split the comma-separated phonon charges, discard whitespace-only pieces and convert every remaining piece with circular_integer(). Reject an empty list. Parse a nonempty absorption charge strictly, and collect the actual visible spin, N, OAM, charges, scope declaration and exact angle offsets.",
-        "why": "These inputs are physically relevant to the selected conditional rule check, so malformed integers or a missing charge list must be reported rather than silently replaced with defaults.",
-        "check": "Inactive-field guarding must not weaken the existing rejection of fractional, Boolean or missing circular-rule charges when that rule is active."
+        "start_line": 282,
+        "end_line": 287,
+        "title": "Update model visibility",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 242,
-        "end_line": 277,
-        "title": "Show relevant controls and the actual sample states",
-        "explanation": "The callback exposes only the controls appropriate to the selected profile, builds optical_chain() from the visible values and renders Ei and the effective detector es=B.H*e_an. SECOND scans are displayed with \u03b8; other scans use \u03b1. The previous result is invalidated.",
-        "why": "Looking at the analyzer after a return optic is not enough: the Raman contraction uses the effective detection state at the sample. This preview makes differences between QWP, elliptical and direct-linear scans inspectable.",
-        "check": "Fixed circular states have CONSTANT scan basis. VV/VH have SECOND amplitude basis, while fixed-input detection scans normally have FIRST."
+        "start_line": 290,
+        "end_line": 300,
+        "title": "On model",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 280,
-        "end_line": 285,
-        "title": "Reflect which model inputs are active",
-        "explanation": "The original 2D source hides the crystal and orientation panels, shows its source parameters and disables the optics selector. A crystal model restores those panels and allows optical selection.",
-        "why": "The original effective tensor has no lattice or orientation, so leaving those inputs visible as active would imply a calculation that the source model does not perform.",
-        "check": "Visibility changes describe model scope; they do not rotate a source-only tensor."
+        "start_line": 303,
+        "end_line": 373,
+        "title": "Load configuration",
+        "explanation": "Load explicit visible values; changing a report label never changes optics.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 288,
-        "end_line": 298,
-        "title": "Switch model while retaining the prior crystal optical choice",
-        "explanation": "Within a transaction, switching to the original source stores the previous crystal optics and selects QWP. Switching back restores that stored choice. The form visibility and state preview are then updated.",
-        "why": "The source model must use its own specified optical chain. Returning to the crystal model should not discard an independently chosen optical experiment.",
-        "check": "The original-source model intentionally fixes its optics to QWP."
-      },
-      {
-        "start_line": 301,
-        "end_line": 371,
-        "title": "Load a complete visible configuration atomically",
-        "explanation": "The transaction loads the model, optics, labels and either source parameters or crystal fields. Crystal loading rebuilds definitions, sets the metric and axes, selects modes, converts complex coefficients into magnitude/phase controls and serializes a custom numerical matrix. It then loads rule metadata, angular zeros, direct states and display options. Finally it refreshes panels and invalidates any prior result.",
-        "why": "An example should be reproducible by inspecting the visible form. No report label should secretly select optics, and a copied preset must not trigger intermediate calculations while it is being loaded.",
-        "check": "A configuration is loaded but not calculated by this function. It represents numerical widget values, not an arbitrary unresolved symbolic custom tensor."
-      },
-      {
-        "start_line": 374,
-        "end_line": 391,
-        "title": "Apply only the explicitly chosen example",
-        "explanation": "The selected example name chooses the slide-frame, 3D QWP, original 2D source, complex-linear, circular-channel or silicon reference configuration. load_configuration() fills the form and a status message asks for calculation.",
-        "why": "Examples deliberately change a complete configuration, whereas a material-only edit preserves the current optical experiment.",
-        "check": "The final else branch corresponds to the fixed silicon (500) VV example because those are the declared dropdown options."
-      },
-      {
-        "start_line": 393,
+        "start_line": 376,
         "end_line": 393,
-        "title": "Confirm that this cell finished executing",
-        "explanation": "The final print statement reports the code-cell number, the phrase \u201cRun completed successfully.\u201d and the functions or controls that are now ready. It is reached only if the preceding statements finish without an uncaught exception.",
-        "why": "Definition cells otherwise run silently, which can be confusing for a new user. Execution status is separate from the scientific validation results in Cell 22.",
-        "check": "Run Cells 1\u201318 in order and confirm the Cell 18/22 message. Model/source checks must be inspected separately in Validation."
+        "title": "On load example",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 395,
+        "end_line": 395,
+        "title": "Prepare 18 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       }
     ],
     "pitfalls": [
@@ -396,147 +980,163 @@
     "blocks": [
       {
         "start_line": 1,
-        "end_line": 3,
-        "title": "Define calculation and result actions",
-        "explanation": "This cell contains the controller layer: it reads the form, calls the physical engine and renders or exports the stored result.",
-        "why": "The matrix engine should remain independent of notebook widgets so it can be reused by another interface.",
-        "check": "Defining these functions does not run them until a button, observer or startup action calls them."
+        "end_line": 1,
+        "title": "Prepare 19 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 4,
         "end_line": 45,
-        "title": "Convert the form into one scientific input dictionary",
-        "explanation": "For the original source, start from qwp_source_config() and replace its four real parameters. For a crystal, start from general_config(), construct every selected branch coefficient with magnitude and phase, strictly parse a 3-by-3 custom numerical JSON tensor when selected, and copy the geometry, optics and display values.",
-        "why": "The calculation receives an explicit snapshot of the form. This prevents the engine from reading widget values while calculating and retains exactly which inputs produced a result.",
-        "check": "General crystal coefficients use complex_parameter(); custom entries use parse_complex(), which does not evaluate arbitrary Python code."
+        "title": "Collect config",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 48,
         "end_line": 52,
-        "title": "Store an actionable calculation error",
-        "explanation": "The exception type, message and traceback are placed in state[\"last_error\"]. The visible message is HTML-escaped before it is inserted into status.",
-        "why": "Failures should be visible and inspectable, while user-supplied text should not become executable page markup.",
-        "check": "An error report does not substitute a fallback scientific curve."
+        "title": "Report error",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 55,
         "end_line": 75,
-        "title": "Display extrema and sampled intensities",
-        "explanation": "The first table uses each displayed channel summary to show Imin, Imax and its continuous-angle maximum. Constant/zero responses have no unique maximum angle. The second table reports the stored plotted arrays at 15-degree intervals.",
-        "why": "The numeric view must correspond to the component curves actually displayed. The extrema are derived from harmonic coefficients rather than inferred from a coarse grid.",
-        "check": "The table is raw intensity data even when figure normalization is enabled; the archive includes the full angular grid."
+        "title": "Result table markdown",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 78,
         "end_line": 122,
-        "title": "Explain same-state equivalence and different-state scans",
-        "explanation": "The report lists direct and circular-basis reconstruction errors, projector distances between optical profiles at four angles, and maximum within-mode interference from the complete tensor audit. If available it adds the scope of the conditional circular rule.",
-        "why": "A differing polar plot can arise from a different experiment rather than a failed contraction. Conversely, equivalent states must agree across representations.",
-        "check": "The complete-mode interference audit is separate from the main Ag component plots; it must not be read as an extra component-sum figure."
+        "title": "Protocol check markdown",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 125,
-        "end_line": 179,
-        "title": "Calculate once and render the same result everywhere",
-        "explanation": "After the busy guard, clear stale outputs and errors. calculate_general(collect_config()) creates the run; detailed_calculation() creates the mathematical trace; publication_figures() creates the plots. An optional frame is appended. Those objects are stored once, then rendered in the mathematical, plot, frame, table, audit and LaTeX tabs. Figure registry handles are closed after display, while figure objects are retained for export. Only a fully successful path enables export and comparison saving. checking_procedures_for_run uses the same frozen run to generate an evidence record. checking_report_markdown displays each check's purpose and mathematical expectation above the existing protocol comparisons.",
-        "why": "Every view should derive from the same calculated snapshot. Rebuilding a formula independently during display could otherwise disagree with the plotted array. Errors clear the incomplete result rather than leaving mixed old/new views.",
-        "check": "The status reports the actual channel and equation counts. show_steps hides the rendered derivation only; the calculated trace remains available in downloads."
+        "end_line": 182,
+        "title": "On run",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 182,
-        "end_line": 194,
-        "title": "Build a downloadable byte payload",
-        "explanation": "The bytes are base64-encoded into a data URL. The filename is escaped for its HTML attribute and visible label; MIME defaults to application/zip.",
-        "why": "Notebook output needs a user-triggered browser download without relying on a writable user filesystem path.",
-        "check": "This creates a link to already generated bytes; it does not rerun the calculation."
+        "start_line": 185,
+        "end_line": 197,
+        "title": "Download link",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 197,
-        "end_line": 214,
-        "title": "Export the stored calculated snapshot",
-        "explanation": "The handler returns when no run exists. Otherwise make_general_archive() receives the stored run, figures, derivation, validation and saved comparison snapshots. Its returned bytes are retained and linked from the Downloads tab.",
-        "why": "An export should describe the calculation that the user reviewed, including its component policy and input assumptions. It should not silently collect a different form.",
-        "check": "Input observers disable export when the form changes, so the user must calculate the revised form first."
+        "start_line": 200,
+        "end_line": 217,
+        "title": "On export",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 217,
-        "end_line": 224,
-        "title": "Download the symbolic intensity source",
-        "explanation": "paper_intensity_latex() receives the stored run and trace. The symbolic document is encoded as UTF-8 and linked as a .tex file in Downloads.",
-        "why": "A manuscript equation needs the symbolic coefficient law before numerical substitution, rather than a string copied from an image or fitted to a plot.",
-        "check": "The symbolic file differs intentionally from the numerical-intensity document in the full ZIP."
+        "start_line": 220,
+        "end_line": 227,
+        "title": "On latex",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 227,
-        "end_line": 249,
-        "title": "Run the full regression suite and preserve its status",
-        "explanation": "The handler clears the validation view, invokes run_self_checks() plus validate_general_upgrade(), records the software version and messages and prints each passing check. Failure records a failed status, reports the exception and re-raises it. validate_optical_reference executes the uploaded original reference identities, limits, four circular channels and appendix convention. The full report is retained in state and rendered with its purposes.",
-        "why": "A test suite should fail visibly and retain which version was checked. Passing algebra checks must not be presented as experimental certification of illustrative coefficients.",
-        "check": "The printed scope explicitly excludes unknown sample coefficients and omitted propagation effects. A source-reference report must have status passed; otherwise this callback records a validation failure."
+        "start_line": 230,
+        "end_line": 252,
+        "title": "On validate",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 252,
-        "end_line": 275,
-        "title": "Overlay eligible saved snapshots for a selected channel",
-        "explanation": "Close an obsolete comparison figure, return when there is no saved data or selected channel, and call publication_comparison() with the frozen runs and normalization choice. The figure and a numbered input/protocol list are displayed.",
-        "why": "Saved comparisons must retain their original inputs. A plotted overlay needs an accompanying description of which experiment each curve represents.",
-        "check": "Incompatible scan definitions are rejected by publication_comparison() rather than aligned or fitted to make the overlay agree."
+        "start_line": 255,
+        "end_line": 278,
+        "title": "Render comparison",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 278,
-        "end_line": 288,
-        "title": "Freeze the current result for later comparison",
-        "explanation": "A successful current run is deep-copied into state[\"comparisons\"]. An insertion-order-preserving union of its displayed channel names populates the comparison selector, then the selected overlay is refreshed.",
-        "why": "A shallow reference could change when the main run is edited. A deep snapshot preserves the tensor, geometry, coefficients, optics and arrays together.",
-        "check": "Saving a comparison requires a calculated run; it does not save an uncalculated form."
+        "start_line": 281,
+        "end_line": 291,
+        "title": "Add comparison",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 291,
-        "end_line": 297,
-        "title": "Remove comparison snapshots and their display",
-        "explanation": "The saved run list is emptied, the previous overlay figure is closed, its state and selector are cleared, and the comparison output is erased.",
-        "why": "Clearing a comparison should release its figure and remove obsolete labels together.",
-        "check": "The current main calculation is unaffected."
+        "start_line": 294,
+        "end_line": 300,
+        "title": "Clear comparison",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 300,
-        "end_line": 304,
-        "title": "Mark edited benchmark controls as stale",
-        "explanation": "Clear the stored study, its archive and validation, disable inspection/export, empty its output and ask for recalculation.",
-        "why": "Benchmark data from a previous common d value or angular grid must not remain downloadable as if it used the new controls.",
-        "check": "This invalidates only the benchmark state, not saved main-calculator comparisons."
+        "start_line": 303,
+        "end_line": 307,
+        "title": "Invalidate cubic",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 307,
-        "end_line": 325,
-        "title": "Calculate and independently validate all 18 reference cases",
-        "explanation": "calculate_cubic_fig1() creates six surfaces times three protocols. validate_cubic_fig1() checks the study. The study and validation messages are stored, its summary and publication figure are displayed, and inspect/export controls are enabled.",
-        "why": "The reference figure is a computed and tested study, not a static image pasted into the program.",
-        "check": "A failure is reported; inspection and export should remain unavailable for an invalidated study."
+        "start_line": 310,
+        "end_line": 328,
+        "title": "On cubic run",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 328,
-        "end_line": 336,
-        "title": "Open one benchmark case in the general inspector",
-        "explanation": "Deep-copy the chosen protocol/surface configuration from the computed study, load it into the visible form, call on_run() and select the Mathematical derivation tab.",
-        "why": "The same general engine should explain an individual reference case, including its actual matrices and phonon partners.",
-        "check": "The inspected result must match the corresponding benchmark array for identical inputs."
+        "start_line": 331,
+        "end_line": 339,
+        "title": "On cubic inspect",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 339,
-        "end_line": 350,
-        "title": "Export the computed silicon study for OriginLab",
-        "explanation": "When a study exists, make_cubic_origin_archive() packages the stored study and validation. The bytes are retained and linked in Downloads.",
-        "why": "A native plotting handoff should contain calculated data and their provenance, not replace the scientific calculation with a plotting template.",
-        "check": "The exported Origin script still requires an OriginLab installation to execute natively."
+        "start_line": 342,
+        "end_line": 353,
+        "title": "On cubic export",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 352,
-        "end_line": 352,
-        "title": "Confirm that this cell finished executing",
-        "explanation": "The final print statement reports the code-cell number, the phrase \u201cRun completed successfully.\u201d and the functions or controls that are now ready. It is reached only if the preceding statements finish without an uncaught exception.",
-        "why": "Definition cells otherwise run silently, which can be confusing for a new user. Execution status is separate from the scientific validation results in Cell 22.",
-        "check": "Run Cells 1\u201319 in order and confirm the Cell 19/22 message. Model/source checks must be inspected separately in Validation."
+        "start_line": 357,
+        "end_line": 379,
+        "title": "Display explained steps",
+        "explanation": "Place English explanations on the left and complete mathematics on the right.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 381,
+        "end_line": 391,
+        "title": "On review inputs",
+        "explanation": "Review the actual frame and optical states without calculating a polar curve.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 393,
+        "end_line": 393,
+        "title": "Prepare 19 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       }
     ],
     "pitfalls": [
@@ -586,7 +1186,7 @@
         "end_line": 340,
         "title": "Prevent reference policies from leaking into the source or crystal routes",
         "explanation": "Verify that the original source has no crystal geometry or exported hkl, and that its amplitude and return phase match its circular derivation. Exercise source special cases. Compare the preserved historical component prescription and the coherent complete tensor against independent contractions, then change a relative phase to show their different interference rules. Invalid hybrid configurations must raise. Finally temporarily replace foreign crystal/reference helpers with functions that fail, run the pure source route and restore the globals in finally.",
-        "why": "A calculation cannot be called a source reproduction if it silently imports another method\u2019s tensor split or optical chain. The forbidden-call tests prove separation of execution paths rather than merely comparing final numbers.",
+        "why": "A calculation cannot be called a source reproduction if it silently imports another method’s tensor split or optical chain. The forbidden-call tests prove separation of execution paths rather than merely comparing final numbers.",
         "check": "The preserved historical component-power sum is a regression target; the new main Ag figures remain separate xx/yy/zz contributions."
       },
       {
@@ -609,7 +1209,7 @@
         "start_line": 472,
         "end_line": 526,
         "title": "Test phonon-basis invariance and optical limiting cases",
-        "explanation": "Randomly orthogonally mix the Eg, E2g and T2g partner tensors and verify that their unresolved summed powers remain unchanged. Compare silicon\u2019s direct-linear constant response with its different QWP sin-squared response. Verify basal-plane E1g extinction.",
+        "explanation": "Randomly orthogonally mix the Eg, E2g and T2g partner tensors and verify that their unresolved summed powers remain unchanged. Compare silicon’s direct-linear constant response with its different QWP sin-squared response. Verify basal-plane E1g extinction.",
         "why": "Orthogonal unresolved phonon partners require a power sum that is invariant under a change of partner basis. Different optical chains should retain their genuinely different limits.",
         "check": "Partner mixing is not the same operation as separating xx, yy and zz entries of one Ag phonon."
       },
@@ -633,9 +1233,9 @@
         "start_line": 589,
         "end_line": 589,
         "title": "Confirm that this cell finished executing",
-        "explanation": "The final print statement reports the code-cell number, the phrase \u201cRun completed successfully.\u201d and the functions or controls that are now ready. It is reached only if the preceding statements finish without an uncaught exception.",
+        "explanation": "The final print statement reports the code-cell number, the phrase “Run completed successfully.” and the functions or controls that are now ready. It is reached only if the preceding statements finish without an uncaught exception.",
         "why": "Definition cells otherwise run silently, which can be confusing for a new user. Execution status is separate from the scientific validation results in Cell 22.",
-        "check": "Run Cells 1\u201320 in order and confirm the Cell 20/22 message. Model/source checks must be inspected separately in Validation."
+        "check": "Run Cells 1–20 in order and confirm the Cell 20/22 message. Model/source checks must be inspected separately in Validation."
       }
     ],
     "pitfalls": [
@@ -698,7 +1298,7 @@
         "title": "Check a finite third-order response term",
         "explanation": "Compare resonance_element() with an independently written product of complex denominators over a laser-energy grid. Unwrap the phase to check its continuous branch, then multiply the numerator weight by i and verify the response acquires exactly that phase.",
         "why": "Discarding an imaginary numerator or using a one-quadrant phase would invalidate a complex Raman coefficient model.",
-        "check": "This tests an explicitly supplied finite sum. It does not derive a material\u2019s electronic bands or coefficients from its name."
+        "check": "This tests an explicitly supplied finite sum. It does not derive a material’s electronic bands or coefficients from its name."
       },
       {
         "start_line": 225,
@@ -712,7 +1312,7 @@
         "start_line": 320,
         "end_line": 410,
         "title": "Validate all silicon surfaces with independent reductions",
-        "explanation": "For every protocol and each requested (5k0) surface, verify the frame and complete T2g triplet. Compare the calculated intensity divided by |d|\u00b2 with independent closed forms. A separate 3D einsum includes phonon-basis projection, then analytic maxima and \u03c3\u207bpattern tilt are checked. The (110) longitudinal extinction must not be mistaken for extinction of total silicon intensity. Scaling d and changing a global phase are tested, and the Origin plotting script is syntax-compiled.",
+        "explanation": "For every protocol and each requested (5k0) surface, verify the frame and complete T2g triplet. Compare the calculated intensity divided by |d|² with independent closed forms. A separate 3D einsum includes phonon-basis projection, then analytic maxima and σ⁻pattern tilt are checked. The (110) longitudinal extinction must not be mistaken for extinction of total silicon intensity. Scaling d and changing a global phase are tested, and the Origin plotting script is syntax-compiled.",
         "why": "The reference benchmark must retain complete phonon physics and a common normalization. A single phonon-polarization extinction cannot replace an unresolved silicon triplet.",
         "check": "Compiling the Origin script verifies Python syntax; it does not execute OriginLab natively."
       },
@@ -760,7 +1360,7 @@
         "start_line": 506,
         "end_line": 544,
         "title": "General check 4: every implemented point group",
-        "explanation": "Construct the general material with each point group, all its template families and complex trial coefficients. Use an appropriate conventional principal metric and run VV, VH and \u03c3\u207a\u03b1. matching_protocol_audit() compares direct and circular-basis representations for every displayed channel.",
+        "explanation": "Construct the general material with each point group, all its template families and complex trial coefficients. Use an appropriate conventional principal metric and run VV, VH and σ⁺α. matching_protocol_audit() compares direct and circular-basis representations for every displayed channel.",
         "why": "A common engine should operate on every library tensor form without a material-specific intensity formula or special coefficient fitting.",
         "check": "The check counts 21 groups and the actual displayed channels; this loop uses a principal (001) setting."
       },
@@ -785,7 +1385,7 @@
         "end_line": 622,
         "title": "General check 7: preserve genuinely different detector scans",
         "explanation": "Require QWP, elliptical-reference and direct-linear detection projectors to be different over the scan. For QWP versus the reference, verify equal circular endpoints and a nonzero intermediate projector distance.",
-        "why": "Agreement at \u03b1=0 and 90 degrees does not establish equality at intermediate angles; relative phases between circular components matter.",
+        "why": "Agreement at α=0 and 90 degrees does not establish equality at intermediate angles; relative phases between circular components matter.",
         "check": "This is a polarization-state test. It neither shifts angular zeros nor rescales intensities to align curves."
       },
       {
@@ -864,9 +1464,9 @@
         "start_line": 1029,
         "end_line": 1029,
         "title": "Confirm that this cell finished executing",
-        "explanation": "The final print statement reports the code-cell number, the phrase \u201cRun completed successfully.\u201d and the functions or controls that are now ready. It is reached only if the preceding statements finish without an uncaught exception.",
+        "explanation": "The final print statement reports the code-cell number, the phrase “Run completed successfully.” and the functions or controls that are now ready. It is reached only if the preceding statements finish without an uncaught exception.",
         "why": "Definition cells otherwise run silently, which can be confusing for a new user. Execution status is separate from the scientific validation results in Cell 22.",
-        "check": "Run Cells 1\u201321 in order and confirm the Cell 21/22 message. Model/source checks must be inspected separately in Validation."
+        "check": "Run Cells 1–21 in order and confirm the Cell 21/22 message. Model/source checks must be inspected separately in Validation."
       }
     ],
     "pitfalls": [
@@ -888,103 +1488,143 @@
     "blocks": [
       {
         "start_line": 1,
+        "end_line": 1,
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 3,
         "end_line": 14,
-        "title": "Short goal and five-step guide",
-        "explanation": "Introduce the calculation in one sentence and show which numbered controls to use.",
-        "why": "Keep the opening concise and put plots in the result tab.",
-        "check": "The guide contains fewer than 100 words and appears before the calculator title."
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 16,
         "end_line": 27,
-        "title": "Group material and tensor controls",
-        "explanation": "Arrange the material, group, modes, complex coefficients and custom tensor controls created in Cell 17.",
-        "why": "Inputs remain in one numbered panel.",
-        "check": "Visibility and allowed values are managed by Cell 18."
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 28,
         "end_line": 42,
-        "title": "Group orientation and lattice controls",
-        "explanation": "Arrange hkl, uvw, normal side, \u03c8 and the lattice metric with the zone-condition note.",
-        "why": "Surface indices alone do not determine a measurement frame.",
-        "check": "For startup, hkl=(5,0,0), uvw=(0,-5,0), normal side +1 and \u03c8=0\u00b0."
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 43,
+        "end_line": 45,
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 46,
+        "end_line": 56,
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 57,
         "end_line": 60,
-        "title": "Group Jones states, display and comparisons",
-        "explanation": "Place the existing widgets in five numbered settings tabs and assign their labels.",
-        "why": "Container construction arranges controls without recalculating.",
-        "check": "VV startup uses parallel co-rotating linear states; direct and circular-rule inputs are inactive."
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 61,
-        "end_line": 71,
-        "title": "Keep the optional optical-profile guide",
-        "explanation": "Build the comparison guide and selected-profile explanation in an initially closed accordion.",
-        "why": "Users can inspect the actual Jones states and source scope when needed.",
-        "check": "The guide does not change coefficients or align curves."
+        "end_line": 61,
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 62,
+        "end_line": 66,
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 67,
+        "end_line": 67,
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 68,
+        "end_line": 68,
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 69,
+        "end_line": 69,
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
+      },
+      {
+        "start_line": 70,
+        "end_line": 70,
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
         "start_line": 72,
-        "end_line": 91,
-        "title": "Assemble the numbered application",
-        "explanation": "Place selectors, settings, calculate/export actions, status and result tabs below the title.",
-        "why": "The interface remains available for calculations after the silicon test.",
-        "check": "The plot remains in Polar plots; no image is displayed above the calculator title."
+        "end_line": 92,
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 92,
-        "end_line": 118,
-        "title": "Avoid duplicate wiring and observe ordinary inputs",
-        "explanation": "Return after redisplaying an already wired app. Otherwise attach invalidation to ordinary fields.",
-        "why": "Rerunning Cell 22 should preserve edited inputs and avoid duplicate callbacks.",
-        "check": "After editing earlier definitions, restart the kernel and Run All."
+        "start_line": 95,
+        "end_line": 186,
+        "title": "Start application",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 119,
-        "end_line": 138,
-        "title": "Connect specialized observers",
-        "explanation": "Material, group, model, optics, surface and mode selectors receive their own handlers. Index and direct-state fields get dedicated observers.",
-        "why": "Some edits change the available controls as well as the calculation inputs.",
-        "check": "Example loading uses the busy guard to update controls together."
+        "start_line": 189,
+        "end_line": 189,
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       },
       {
-        "start_line": 139,
-        "end_line": 154,
-        "title": "Connect explicit actions once",
-        "explanation": "Map each button to its calculate, export, validate, compare or benchmark callback, then set the wired flag.",
-        "why": "Button actions remain explicit after the automatic first run.",
-        "check": "The wired flag prevents duplicate registration."
-      },
-      {
-        "start_line": 155,
-        "end_line": 168,
-        "title": "Display sources and input scope",
-        "explanation": "Populate the Sources tab with the existing reference links and a note about material-dependent inputs.",
-        "why": "The declared geometry, coefficients and Jones states remain traceable.",
-        "check": "Source notes are separate from numerical checks."
-      },
-      {
-        "start_line": 169,
-        "end_line": 182,
-        "title": "Calculate and test the silicon startup case",
-        "explanation": "Load the existing Si (500) VV preset through the normal form loader, calculate it, stop on failure and compare all 721 intensities with sin\u00b2(2\u03b8). Then execute the wider model/source validation suite.",
-        "why": "This gives newcomers a reproducible first calculation and a check independent of the tensor contraction.",
-        "check": "d=1, normalization off; the absolute tolerance is 1e-10. The sampled maximum is 1.0."
-      },
-      {
-        "start_line": 185,
-        "end_line": 187,
-        "title": "Start and confirm completion",
-        "explanation": "Initialize the application and print the numbered Cell 22 completion message after successful execution.",
-        "why": "New users receive a visible completion message as well as the silicon plot.",
-        "check": "Confirm all 22 messages and the silicon/model validation results."
+        "start_line": 191,
+        "end_line": 191,
+        "title": "Prepare 22 inputs and state",
+        "explanation": "Set the displayed controls or values used by the following numbered operations.",
+        "why": "Keep the notebook, browser and exported calculation consistent.",
+        "check": "Run the cells in order and inspect the input review or result for this operation."
       }
     ],
     "pitfalls": [
-      "Run Cells 1\u201321 before this cell; a fresh kernel and Run All rebuilds edited definitions.",
+      "Run Cells 1–21 before this cell; a fresh kernel and Run All rebuilds edited definitions.",
       "The T2g curve sums the intensities of three orthogonal phonon partners; d=1 is a relative coefficient scale.",
       "The initial notebook and website both use Silicon (500), VV; the other material examples remain selectable."
     ]

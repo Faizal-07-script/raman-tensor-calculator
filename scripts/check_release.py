@@ -8,9 +8,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 DOWNLOADS = DIST / "downloads"
-VERSION = "4"
+VERSION = "5"
 
-notebook_bytes = (ROOT / "sources/notebook_v4.ipynb").read_bytes()
+notebook_bytes = (ROOT / "sources/notebook_v5.ipynb").read_bytes()
 book = json.loads(notebook_bytes)
 code = ["".join(c["source"]) for c in book["cells"] if c["cell_type"] == "code"]
 assert len(code) == 22
@@ -28,7 +28,7 @@ assert cells["version"] == VERSION
 assert cells["source_sha256"] == digest
 assert [c["source"] for c in cells["cells"]] == code
 assert (DOWNLOADS / "ROTATION_RAMAN_TENSOR_CALCULATION.ipynb").read_bytes() == notebook_bytes
-assert 'AUDIT_VERSION = "4"' in "\n".join(code)
+assert 'AUDIT_VERSION = "5"' in "\n".join(code)
 release = json.loads((DIST / 'data/release.json').read_text())
 revision = book['metadata']['rotation_raman_revision']['download_revision']
 assert release['version'] == VERSION and release['revision'] == revision
@@ -37,7 +37,7 @@ assert f'NOTEBOOK_REVISION = "{revision}"' in code[0]
 assert release['default_input'] == dict(material='Si',hkl=[5,0,0],optics='CUBIC_VV')
 for name, record in release['files'].items():
     payload = (DOWNLOADS / record['filename']).read_bytes()
-    assert record['filename'].rsplit('.',1)[0] == '261024 - Raman Tensor Rotation Ver 4.0'
+    assert record['filename'].rsplit('.',1)[0] == '261024 - Raman Tensor Rotation Ver 5.0'
     assert hashlib.sha256(payload).hexdigest() == record['sha256']
     assert len(payload) == record['size_bytes']
     if name != 'bundle':
@@ -51,11 +51,11 @@ with zipfile.ZipFile(DOWNLOADS / release['files']['bundle']['filename']) as name
 assert (DOWNLOADS / 'RELEASE_MANIFEST.json').read_bytes() == (DIST / 'data/release.json').read_bytes()
 python_source = (DOWNLOADS / release['files']['python']['filename']).read_text()
 assert len(re.findall(r'^# %% Code cell \d+:', python_source, re.M)) == 22
-for name in ['app.js','content.js','optical-guide.js','user-guide.js','styles.css','user-guide.css']:
+for name in ['app.js','content.js','optical-guide.js','user-guide.js','styles.css','user-guide.css','calculator-ui.js','calculator.css']:
     fingerprint = hashlib.sha256((DIST / name).read_bytes()).hexdigest()[:12]
-    assert f'./{name}?v=4-{fingerprint}' in (DIST / 'index.html').read_text()
-assert "VERSION 4" in (DIST / "index.html").read_text()
-assert "version: '4'" in (DIST / "engine-worker.js").read_text()
+    assert f'./{name}?v=5-{fingerprint}' in (DIST / 'index.html').read_text()
+assert "VERSION 5" in (DIST / "index.html").read_text()
+assert "version: '5'" in (DIST / "engine-worker.js").read_text()
 
 startup = book['metadata']['rotation_raman_revision']['validation']['startup_test']
 assert startup['material'] == 'Si' and startup['optics'] == 'CUBIC_VV'
@@ -87,16 +87,16 @@ with zipfile.ZipFile(DOWNLOADS / "All_Python_Programs.zip") as archive:
     assert archive.read("ROTATION_RAMAN_TENSOR_CALCULATION.ipynb") == notebook_bytes
     for name in ["ROTATION_RAMAN_TENSOR_CALCULATION.py", "raman_engine.py", "web_bridge.py"]:
         assert archive.read(name) == (DOWNLOADS / name).read_bytes()
-    for name in ["QUICKSTART.md", "SAITO_FEEDBACK_AUDIT.md", "example_input_v4.json", "silicon_startup_input_v4.json", "Silicon_Startup_Polar_Plot.png", "Symbols_And_References.md"]:
+    for name in ["QUICKSTART.md", "SAITO_FEEDBACK_AUDIT.md", "example_input_v5.json", "silicon_startup_input_v5.json", "Silicon_Startup_Polar_Plot.png", "Symbols_And_References.md"]:
         assert archive.read(name) == (DOWNLOADS / name).read_bytes()
 
-silicon = json.loads((DOWNLOADS / "silicon_startup_input_v4.json").read_text())
-assert silicon == json.loads((ROOT / "sources/silicon_startup_input_v4.json").read_text())
+silicon = json.loads((DOWNLOADS / "silicon_startup_input_v5.json").read_text())
+assert silicon == json.loads((ROOT / "sources/silicon_startup_input_v5.json").read_text())
 assert silicon['material'] == 'Si' and silicon['optics'] == 'CUBIC_VV'
 assert silicon['hkl'] == [5, 0, 0] and silicon['modes'] == ['T2g']
 
-assert (DOWNLOADS / "example_input_v4.json").read_bytes() == (ROOT / "sources/example_input_v4.json").read_bytes()
-sample = json.loads((DOWNLOADS / "example_input_v4.json").read_text())
+assert (DOWNLOADS / "example_input_v5.json").read_bytes() == (ROOT / "sources/example_input_v5.json").read_bytes()
+sample = json.loads((DOWNLOADS / "example_input_v5.json").read_text())
 reference = json.loads((DIST / "data/reference-example.json").read_text())
 assert sample == reference["configuration"]
 assert len(reference["angles"]) == 721
@@ -113,9 +113,15 @@ catalog=json.loads((DIST/'data/catalog.json').read_text())
 assert catalog['default_example']=='SI_500'
 assert catalog['examples']['SI_500']['config']==silicon
 assert reference['latex']['full'].count('Symbols and units')==1
-assert reference['latex']['explained'].count('Symbols and units')==len(equations)
+assert r'\begin{longtable}' in reference['latex']['explained']
+assert reference['latex']['explained'].count(r'\fitmath{')==len(equations)
+assert (DIST/'calculator.html').is_file()
+assert 'data-calculator-only="true"' in (DIST/'calculator.html').read_text()
+assert reference['input_review']['intensity_calculated'] is False
+assert len(reference['input_review']['axes']) == 3
+assert reference['analytical_intensity']
 assert reference['symbol_legend']
-assert '261024 - Raman Tensor Rotation Ver 4.0' in python_source
+assert '261024 - Raman Tensor Rotation Ver 5.0' in python_source
 assert 'Run completed successfully.' not in (DIST/'raman_engine.py').read_text()
 
 for name in ["index.html", "app.js", "styles.css", "engine-worker.js", "user-guide.js", "user-guide.css"]:
@@ -128,12 +134,15 @@ for name in ["raman_engine.py", "web_bridge.py", "vendor/pyodide/pyodide.js", "v
 assert (DIST / "user-guide.js").is_file()
 assert (DIST / "user-guide.css").is_file()
 assert 'id="user-guide-open"' in (DIST / "index.html").read_text()
-assert "user-guide.js?v=4" in (DIST / "index.html").read_text()
+assert "user-guide.js?v=5" in (DIST / "index.html").read_text()
 assert 'aria-expanded="false"' in (DIST / "index.html").read_text()
 for name in ["index.html", "app.js", "content.js", "optical-guide.js", "engine-worker.js"]:
     assert not re.search(r"(?i)version[ _]*2(?:\b|[._])", (DIST / name).read_text()), name
 for name in ["index.html", "app.js", "content.js", "optical-guide.js", "engine-worker.js", "user-guide.js"]:
     assert not re.search(r"(?i)version[ _]*3(?:\b|[._])", (DIST / name).read_text()), name
+    assert not re.search(r"(?i)version[ _]*4(?:\b|[._])|Ver 4\.0|_v4\b", (DIST / name).read_text()), name
+assert not (ROOT / 'sources/notebook_v4.ipynb').exists()
+assert not list(DOWNLOADS.glob('*Ver 4.0*'))
 assert not (ROOT / "sources/notebook_v3.ipynb").exists()
 assert not (DOWNLOADS / "example_input_v3.json").exists()
 print(f"Version {VERSION}: 22 cells, exact notebook/download/ZIP correspondence and portable static paths passed.")

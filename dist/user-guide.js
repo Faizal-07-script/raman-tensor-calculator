@@ -1,11 +1,11 @@
-/* Version 4: optional, contextual tours. Never calculate or change scientific inputs. */
+/* Version 5: optional, contextual tours. Never calculate or change scientific inputs. */
 (() => {
   'use strict';
   const q = (s, root = document) => root.querySelector(s);
   const qa = (s, root = document) => [...root.querySelectorAll(s)];
   const escape = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const host = () => window.RamanGuideHost;
-  const key = 'rotation-raman-guide-v4';
+  const key = 'rotation-raman-guide-v5';
   const defaults = () => ({welcomeDismissed:false,offerSections:false,visited:[],progress:{}});
   let prefs;
   try { prefs = {...defaults(), ...JSON.parse(localStorage.getItem(key) || '{}')}; }
@@ -39,6 +39,7 @@
   };
 
   function overview() {
+    if (document.body.dataset.calculatorOnly === 'true') return {...calculatorTour(), id:'overview', title:'Start here: the calculator'};
     return tour('overview','Start here: the workspace','#home',[
       step('Your Home workspace','.hero','Start from the crystal-to-intensity workflow. Home introduces the model, links to the calculator and Python source, and explains why optical profiles can give different curves.',{tip:'This tour changes only the displayed page, menu, and explanatory panels. It does not edit coefficients or run Python.',route:'#home'}),
       step('Open navigation with the three lines','#menu-toggle','The menu stays closed when the website first opens. Press this button whenever you want to reveal or hide the section list.',{menu:true}),
@@ -85,7 +86,8 @@
       step('3.8–3.9 Supply the lattice metric','#lattice-0','Lengths use one common unit and lattice angles use degrees. A tilted noncubic plane normal is a reciprocal-lattice quantity; unity ratios are only the declared reference geometry.',{optional:true}),
       step('4. Jones states and active controls','[data-section-key="04"]','Expand this section to see the selected incident/detection states and relevant zero angles or phases. The controls change with the profile. Conditional circular-rule fields do not determine the intensity scale.'),
       step('5. Sampling and normalization','#angular-grid','The angular grid sets the plotted samples. Optional normalization uses a declared common scale. Raw CSV remains unnormalized, and continuous extrema are calculated separately.'),
-      step('6. Calculate the current inputs','[data-calculate]','Press this button after reviewing the inputs. The first run loads scientific Python in the browser. Stop terminates that worker and clears its session snapshots.',{tip:'The interactive guide never runs a calculation on your behalf.'}),
+      step('Review the axes and optical states','[data-preview-inputs]','Review inputs prepares X, Y, Z, the frame matrix, rotated tensors and Jones states before the intensity scan. Check det(T)=+1 and the declared zero angle. This tour never starts that calculation.'),
+      step('6. Calculate the current inputs','[data-calculate]','Run the intensity calculation after checking your inputs. The first preparation or calculation loads scientific Python in the browser. Stop terminates that worker and clears its session snapshots.',{tip:'The interactive guide never runs a calculation on your behalf.'}),
       step('Check result freshness','#calculation-status','A stored example or a previous run is not automatically the result of edited inputs. Review the status and recalculate after changes before exporting or comparing.'),
       step('7. Inspect the result tabs','.result-tabs','Use plots for figures, Mathematical steps for the derivation, Intensity values for numerical summaries, and 3D frame for axes. Checks and benchmarks have separate scopes.'),
       step('7. Export results with their inputs','.results-toolbar','Download the complete result archive, unnormalized CSV, or a comparison snapshot after calculating. Disabled controls explain which outputs require a fresh runtime result.')
@@ -95,7 +97,7 @@
   function resultsTour() {
     const tabs = [
       ['plots','Polar plots','Main Ag curves show separate Cartesian powers. Each figure offers SVG, PNG, and PDF export after a fresh calculation. The complete coherent-mode response remains in the audit.'],
-      ['math','Mathematical steps','Choose 1. Full mathematics for every equation with one short symbol list at the bottom. Choose 2. Explained derivation for the same equations with detailed definitions, units and sources. Expand the calculation blocks as needed.'],
+      ['math','Step-by-step calculation','English explanations appear on the left and full matrix calculations on the right. Symbols are defined at first use. The displayed equations use the original tensor elements directly. Use Jump to final intensity to reach the analytical result.'],
       ['values','Intensity values','Inspect the calculated continuous extrema and channel summaries. The raw CSV export contains angular samples rather than only fitted extrema.'],
       ['frame','3D frame','Inspect crystal and measurement axes, the selected surface normal, and the orientation matrix. This view requires the relevant 3D geometry output.'],
       ['procedures','Checking procedures','Read each procedure’s purpose, scope, expected equation, and evidence. A stored reference report is identified until a new calculation regenerates current evidence.'],
@@ -164,9 +166,9 @@
     return tour('page:'+r,'References & Python downloads',r,[
       step('Identify the primary sources','.page-title-row','References identify the physics papers, optical conventions, software documentation, and original implementation notebooks used by the project.'),
       step('Read what each source supports','.reference-item','Each reference includes authors, publication details, a link, and the particular calculation or convention it supports. An implementation reference is not a measured tensor assignment.'),
-      step('Download the current notebook','#downloads','The Version 4 notebook is the recommended Python entry point. Run all 22 code cells in order in a Jupyter or Colab environment with the listed requirements.'),
+      step('Download the current notebook','#downloads','The Version 5 notebook is the recommended Python entry point. Run all 22 code cells in order in a Jupyter or Colab environment with the listed requirements.'),
       step('Choose the right Python file','#downloads a[aria-label="Download All Python programs"]','The complete program archive includes the notebook, matching source, reusable engine, browser adapter, style, requirements, and preserved original references. The download revision is shown above these links and printed by Cell 1.'),
-      step('Original references stay attributable','#ref-kumar-original','The original uploaded implementation is retained as a source reference. Its own historical metadata is preserved; the application release is Version 4.'),
+      step('Original references stay attributable','#ref-kumar-original','The original uploaded implementation is retained as a source reference. Its own historical metadata is preserved; the application release is Version 5.'),
       step('Check source correspondence','#main-content > .card:last-child','The notebook fingerprint connects the live tutorial and scientific functions to their source. Guide settings and guide progress are separate from scientific data.')
     ],'Primary sources, notebook downloads, original references, and source correspondence.');
   }
@@ -220,8 +222,11 @@
     closeInvite();
     hub?.remove(); hub = document.createElement('dialog'); hub.className = 'guide-hub'; hub.setAttribute('aria-labelledby','guide-hub-title');
     const current = sectionTour(route()), tours = allTours();
-    const progress = tours.filter(t=>prefs.progress[t.id] && !prefs.progress[t.id].completed);
-    hub.innerHTML = '<div class="guide-hub-head"><div><span class="kicker">VERSION 4 · OPTIONAL USER GUIDE</span><h2 id="guide-hub-title">User guide</h2><p>Choose a tour or get help with the current page. You can close the guide at any time.</p></div><button type="button" class="guide-close" data-guide-hub-close aria-label="Close user guide">×</button></div><div class="guide-hub-body"><h3>Start or continue</h3><div class="guide-tour-grid">'+option(overview())+option(current)+option(calculatorTour())+option(resultsTour())+'</div>'+(progress.length?'<h3>Resume a paused guide</h3><div class="guide-tour-grid">'+progress.map(t=>option(t,true)).join('')+'</div>':'')+'<h3>Guides for every section and Python cell</h3><div class="guide-tour-grid">'+tours.filter(t=>!['overview','calculator-inputs','calculator-results'].includes(t.id)).map(t=>option(t)).join('')+'</div><div class="guide-settings"><label class="guide-setting"><input type="checkbox" id="guide-offer-sections" '+(prefs.offerSections?'checked':'')+'><span>Offer a guide when I first visit a new page. Tours start only when I choose to use them.</span></label><p class="guide-storage-note">This browser stores only guide preferences, visited guide pages, and step progress. Scientific inputs and results are not saved by the guide. Storage may be unavailable in private browser modes.</p><button type="button" class="guide-reset" data-guide-reset>Reset guide progress and preferences</button></div></div>';
+    const standalone = document.body.dataset.calculatorOnly === 'true';
+    const progress = tours.filter(t=>prefs.progress[t.id] && !prefs.progress[t.id].completed && (!standalone || ['overview','calculator-inputs','calculator-results'].includes(t.id)));
+    const startingGuides = standalone ? option(calculatorTour())+option(resultsTour()) : option(overview())+option(current)+option(calculatorTour())+option(resultsTour());
+    const sectionGuides = standalone ? '' : '<h3>Guides for every section and Python cell</h3><div class="guide-tour-grid">'+tours.filter(t=>!['overview','calculator-inputs','calculator-results'].includes(t.id)).map(t=>option(t)).join('')+'</div>';
+    hub.innerHTML = '<div class="guide-hub-head"><div><span class="kicker">VERSION 5 · OPTIONAL USER GUIDE</span><h2 id="guide-hub-title">User guide</h2><p>Choose a tour or get help with the current page. You can close the guide at any time.</p></div><button type="button" class="guide-close" data-guide-hub-close aria-label="Close user guide">×</button></div><div class="guide-hub-body"><h3>Start or continue</h3><div class="guide-tour-grid">'+startingGuides+'</div>'+(progress.length?'<h3>Resume a paused guide</h3><div class="guide-tour-grid">'+progress.map(t=>option(t,true)).join('')+'</div>':'')+sectionGuides+'<div class="guide-settings"><label class="guide-setting"><input type="checkbox" id="guide-offer-sections" '+(prefs.offerSections?'checked':'')+'><span>Offer a guide when I first visit a new page. Tours start only when I choose to use them.</span></label><p class="guide-storage-note">This browser stores only guide preferences, visited guide pages, and step progress. Scientific inputs and results are not saved by the guide. Storage may be unavailable in private browser modes.</p><button type="button" class="guide-reset" data-guide-reset>Reset guide progress and preferences</button></div></div>';
     document.body.append(hub); hub.showModal();
     hub.addEventListener('click',event=>{if(event.target===hub)hub.close();});
     hub.addEventListener('close',()=>q('#user-guide-open')?.focus());

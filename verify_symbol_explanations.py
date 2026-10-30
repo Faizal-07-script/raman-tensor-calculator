@@ -54,7 +54,9 @@ for key,item in catalog['examples'].items():
     assert trace['explained_markdown'].count('**Symbols and units**')==len(equations)
     tex=ns['paper_intensity_latex'](run,trace)
     assert tex['full'].count('Symbols and units')==1
-    assert tex['explained'].count('Symbols and units')==len(equations)
+    assert r'\begin{longtable}' in tex['explained']
+    assert 'Explanation and symbol definitions' in tex['explained']
+    assert tex['explained'].count(r'\fitmath{')==len(equations)
     assert trace['markdown']==trace['mathematics_markdown']
     assert trace['mathematics_markdown'].count('## Symbols and units')==1
     assert '**Symbols and units**' not in trace['mathematics_markdown']
@@ -62,10 +64,14 @@ for key,item in catalog['examples'].items():
         assert '$$'+entry['value']+'$$' in trace['mathematics_markdown']
         assert '$$'+entry['value']+'$$' in trace['explained_markdown']
     assert {row['id'] for row in trace['symbol_legend']}=={row['id'] for entry in equations for row in entry['symbols']}
-    import re
-    assert re.findall(r'\\\[\\fitmath\{(.*?)\}\\\]',tex['full'],re.S)==re.findall(r'\\\[\\fitmath\{(.*?)\}\\\]',tex['explained'],re.S)
+    for entry in equations:
+        rendered = r' & \fitmath{' + entry['value'] + r'}\\\hline'
+        assert rendered in tex['explained']
+        position = tex['explained'].index(rendered)
+        for symbol in entry['symbols']:
+            assert tex['explained'].index('$'+symbol['latex']+'$:') < position
     assert tex['full'].count(r'\[\fitmath{')==len(equations)
-    assert 'Symbols and units' in tex['symbolic'] and 'Symbols and units' in tex['numerical']
+    assert 'Explanation and symbol definitions' in tex['symbolic'] and 'Explanation and symbol definitions' in tex['numerical']
     equation_count+=len(equations)
     examples.append(dict(key=key,equations=len(equations),definitions=sum(len(e['symbols']) for e in equations)))
 
@@ -98,7 +104,7 @@ for profile in catalog['profiles']:
         np.testing.assert_allclose(run['display_curves']['T2g'],expected,atol=1e-12,rtol=0)
     profiles.append(profile)
 
-record=dict(status='passed',version='4',startup=dict(material='Si',surface=[5,0,0],optics='CUBIC_VV'),
+record=dict(status='passed',version='5',startup=dict(material='Si',surface=[5,0,0],optics='CUBIC_VV'),
     examples=examples,total_example_equations=equation_count,profiles=profiles,
     overloaded_symbols='Calligraphic amplitude/source A; unit Jones/physical E; projection/response/physical P; phase, transpose and equilibrium evaluation.',
     units='Local meanings and unit conventions checked for every calculated equation across all examples and profiles.',

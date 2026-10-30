@@ -1,8 +1,8 @@
-# Version 4 - symbols, units and derivation references
+# Version 5 - symbols, units and derivation references
 
 
 
-Choose Full mathematics for all equations with one short symbol list at the end. Explained derivation keeps the detailed definitions and sources below each equation. This file collects the complete definitions for reference.
+Choose Full mathematics for all equations with one short symbol list at the end. Explained derivation places English explanations on the left and the complete mathematics on the right, with symbols defined at first use. This file collects the complete definitions for reference.
 
 
 
@@ -244,7 +244,7 @@ Nonnegative magnitude of the indicated complex tensor coefficient.
 
 ## $a,b,c,d,e,f$
 
-Independent complex tensor coefficients in the selected symmetry form. Only symbols actually used in this equation are active. For Si T2g the three partner tensors share d.
+Complex tensor coefficients in the selected symmetry form. The three silicon T2g partners share d.
 
 **Unit / convention:** relative tensor-coefficient units
 
@@ -282,14 +282,6 @@ Crystal unit axis expressed in measurement coordinates, then restricted to XY. T
 
 
 
-## $G,G_i,G_s;\ \eta_i,\eta_s$
-
-Eta denotes an incident or detector overlap amplitude. G is its nonnegative squared magnitude; active means evaluated with the actual selected optical chain.
-
-**Unit / convention:** dimensionless
-
-
-
 ## $E_{sc},E_{out};\ \mathcal P_c,\mathcal P_{lab}$
 
 Reduced scattered/returned field and induced-response amplitudes calculated from a relative tensor and unit Jones state. These are not calibrated SI electric fields or polarization densities.
@@ -306,17 +298,9 @@ Detected complex Raman scattering amplitude. A j subscript identifies one orthog
 
 
 
-## $C,D;\ K_0,K_c,K_s$
+## $I,I_j;\ I_{min},I_{max}$
 
-Complex coefficients of the first-harmonic or second-harmonic amplitude expansion. Subscripts 0,c,s mean constant, cosine and sine; a further j denotes a partner.
-
-**Unit / convention:** same units as the detected amplitude
-
-
-
-## $I,I_j;\ I_0,I_c,I_s,I_{4c},I_{4s};\ I_{min},I_{max}$
-
-Relative intensity, its real harmonic coefficients and extrema. The final j sum adds intensities of unresolved orthogonal phonon partners. Coherent tensor terms within one partner are added before squaring.
+Relative intensity and its extrema. Orthogonal unresolved phonon partners add as intensities. Tensor terms within one phonon interfere before the modulus is squared.
 
 **Unit / convention:** squared relative tensor-coefficient units, plotted as a.u.
 
@@ -327,22 +311,6 @@ Relative intensity, its real harmonic coefficients and extrema. The final j sum 
 An angle at a continuous intensity maximum, obtained from the harmonic expression. It need not fall on the sampled grid; a constant curve has no unique extremum angle.
 
 **Unit / convention:** degree when explicitly labeled degree; otherwise rad
-
-
-
-## $\Delta$
-
-Nonnegative modulation magnitude sqrt(I_c squared + I_s squared) for a first-harmonic scan. This uppercase Delta is distinct from the source phase delta.
-
-**Unit / convention:** same relative units as intensity
-
-
-
-## $u_1,u_2;\ z$
-
-Complex intensity-harmonic coefficients used only to find second-harmonic stationary points, and the unit-circle variable z=exp(2 i theta). These u symbols are not phonon coordinates.
-
-**Unit / convention:** u_1,u_2: intensity units; z: dimensionless
 
 
 

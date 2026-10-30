@@ -1,4 +1,4 @@
-"""Browser adapter for the unchanged scientific functions in notebook version 4.
+"""Browser adapter for the unchanged scientific functions in notebook version 5.
 
 The notebook supplies all tensors, rotations, Jones states, amplitudes,
 mathematical traces, validation and scientific figures. This adapter validates
@@ -172,6 +172,22 @@ def web_figure_view(name, figure):
     return dict(name=name,svg=svg.getvalue(),png='data:image/png;base64,'+base64.b64encode(png.getvalue()).decode())
 
 
+def web_input_review_view(review):
+    geometry=review['geometry']
+    axes=[]
+    if geometry is not None:
+        for index,label in enumerate(['X','Y','Z']):
+            axes.append(dict(label=label,latex=r'\mathbf '+label+'='+raman_latex(geometry['T'][:,index])))
+    return dict(configuration=web_form(review['config']),axes=axes,equations=review['entries'],
+                equation_count=review['equation_count'],intensity_calculated=False)
+
+
+def web_preflight(input_json):
+    """Return checked axes, rotated tensors and Jones states without a polar scan."""
+    cfg=web_configuration(json.loads(input_json))
+    return web_json(web_input_review_view(prepare_input_review(cfg)))
+
+
 def web_result(run, derivation, figures):
     rows=[]
     for name,item in run['display_channels'].items():
@@ -192,6 +208,11 @@ def web_result(run, derivation, figures):
         angles=np.rad2deg(run['angles']),scan_label=run['scan_label'],scan_basis=run['optical']['scan_basis'],
         figures=[web_figure_view(name,figure) for name,figure in figures],
         equations=derivation['entries'],equation_count=sum(x['kind']=='equation' for x in derivation['entries']),
+        input_review=web_input_review_view(prepare_input_review(run['config'])),
+        analytical_intensity=[dict(channel=row['channel'],
+            symbolic='I('+raman_latex(row['variable'])+')='+raman_latex(row['expression']),
+            numerical='I('+raman_latex(row['variable'])+')='+raman_latex(row['substituted']))
+            for row in derivation['finals']],
         symbol_legend=derivation['symbol_legend'],derivation_reference_ids=derivation['reference_ids'],
         derivation_references=DERIVATION_REFERENCES,
         latex=tex,csv=csv_from_curves(run['angles'],run['display_curves'],'theta_deg' if run['optical']['scan_basis']=='SECOND' else 'alpha_deg'),

@@ -1,156 +1,76 @@
-# Rotation Raman Tensor Calculation — Version 4
+# Rotation Raman Tensor Calculation — Version 5
 
-**Release Version 4: Greek Notation and Improved Instructions**
+**Release Version 5: Clearer Calculator and Complete Mathematical Steps**
 
-[**Open the live website on GitHub Pages**](https://faizal-07-script.github.io/rotation-raman-tensor-calculation/)
+[Full website](https://faizal-07-script.github.io/rotation-raman-tensor-calculation/)
+· [Calculator-only website](https://faizal-07-script.github.io/raman-tensor-calculator/)
 
-[Download the current Python notebook](https://faizal-07-script.github.io/rotation-raman-tensor-calculation/downloads/261024%20-%20Raman%20Tensor%20Rotation%20Ver%204.0.ipynb?sha=ae679e5d7cbd)
-· [Download all Python programs](https://faizal-07-script.github.io/rotation-raman-tensor-calculation/downloads/261024%20-%20Raman%20Tensor%20Rotation%20Ver%204.0.zip?sha=c4c76eac48d7)
+[Download the current Python notebook](https://faizal-07-script.github.io/rotation-raman-tensor-calculation/downloads/261024%20-%20Raman%20Tensor%20Rotation%20Ver%205.0.ipynb?sha=c1c5b4a3ba05)
+· [Download all Python programs](https://faizal-07-script.github.io/rotation-raman-tensor-calculation/downloads/261024%20-%20Raman%20Tensor%20Rotation%20Ver%205.0.zip?sha=1189083c726b)
 
-Calculate Raman intensity from a crystal tensor, measurement frame and Jones
-polarization states. The website includes a calculator, equations, a 22-cell
-Python notebook and example data. Version 4 uses Greek notation and shorter
-instructions. The current program is **261024 - Raman Tensor Rotation Ver 4.0**.
+The full website contains the introduction, optical-method notes, references,
+22-cell Python tutorial and calculator. The separate `raman-tensor-calculator`
+repository publishes a simpler page that opens directly in the calculator.
 
-Mathematical results have two views: **Full mathematics** keeps every equation
-and one short symbol list at the end; **Explained derivation** keeps the same
-equations with detailed definitions and sources after each one. Both are
-included as Markdown and LaTeX in the result archive.
+## First run
 
-## Structure
+Open **261024 - Raman Tensor Rotation Ver 5.0.ipynb** in Jupyter or Colab and
+run all 22 cells in order. Each cell prints its number and a completion message.
+The initial example is silicon (500), VV, with T2g coefficient d=1. Its polar
+plot appears in Cell 22. The matching Python file and input JSON are in the ZIP.
 
-- dist/: complete buildless static application.
-- sources/notebook_v4.ipynb: current notebook, including executed outputs.
-- sources/tutorial_*.json: explanations covering every nonblank source line.
-- sources/reference notebooks: unmodified implementation references.
-- prepare_content.py: extracts the tutorial, scientific functions and downloads.
-- web_bridge.py: strict JSON input adapter and calculated-output formatting.
-- verify_web_bridge.py: scientific adapter/export integration checks.
-- notebook_verification.json, browser_verification.json and
-  dist/data/web-verification.json: validation records and their scope.
+In the website, choose the crystal, tensor, surface, in-plane X direction and
+polarization. Y is calculated from Z × X. Select **Review inputs** to inspect
+the axes, frame matrix, rotated tensors and Jones states before calculating.
+Then select **Run calculation**.
 
-The public directory needs no JavaScript build or server-side Python.
-A browser worker loads self-hosted Pyodide, NumPy, SymPy and Matplotlib.
-The first scientific calculation downloads about 29 MB of runtime dependencies.
-Navigation and documentation work before Python starts.
+## Mathematical results
 
-Install dist/downloads/requirements.txt in a Python environment before
-regenerating assets with python prepare_content.py. If dependencies are
-installed in a separate directory, set RAMAN_PYTHON_DEPENDENCY_PATH to it.
-Rebuilding preserves the notebook function source; only rich notebook display
-imports and notebook-only cell completion messages are omitted in the browser engine.
+Numbered steps show the direct and reciprocal lattice, X/Y/Z axes, frame
+checks, complete tensor rotation, optical matrix products, detected amplitude
+and final intensity. Tensor coefficients stay explicit; intermediate K, C
+and D aliases are not used. The English explanation and new symbol definitions
+appear on the left, with the mathematics on the right. On a phone, the two
+columns stack. A mathematics-only view is also available.
 
-## First run and numbered tools
+Cartesian and polar plots use the same sampled intensities and normalization.
+The result ZIP contains CSV data, figures, both derivation views and symbolic
+LaTeX. Individual equations can be copied as LaTeX. Separate Ag Cartesian
+powers are shown as contributions of one phonon; their powers are not added
+as if they were separate modes. Unresolved orthogonal phonon partners are
+summed as intensities.
 
-Start with [QUICKSTART.md](QUICKSTART.md), then restart the notebook kernel and
-run all 22 cells unchanged. Each cell prints its number and “Run completed
-successfully.” Cell 22 loads silicon (500), VV, checks all 721 angular samples
-against the reference equation and shows a short goal and numbered guide above
-the calculator. The plot is in the Polar plots result tab. It opens the Polar plots result tab and runs the model checks.
-The guide lists input formats, units, expected values and what the last cells need.
+## Program and sources
 
-Tools 1–5 set the model, tensors, orientation, Jones states and display;
-6 calculates and 7 exports. Tools 8–10 are optional validation, comparison
-and silicon benchmark actions. The same group numbers appear in the web calculator.
-The notebook and website both start with Silicon (500), T2g, d=1, VV. The
-matching startup inputs are recorded in sources/silicon_startup_input_v4.json
-and sources/example_input_v4.json. Other material examples remain selectable.
-Each derived equation includes its symbol meanings, unit conventions and
-reference/algebra note; the Markdown and LaTeX exports contain the same notes.
-See dist/downloads/Symbols_And_References.md for the complete glossary.
-See [SAITO_FEEDBACK_AUDIT.md](SAITO_FEEDBACK_AUDIT.md) for the five recommendations,
-their baseline status and the remaining independent review/consultation items.
+- `sources/notebook_v5.ipynb`: current notebook, including saved outputs.
+- `dist/downloads/`: matching notebook, complete Python source and program ZIP.
+- `dist/raman_engine.py`: scientific functions extracted from the notebook.
+- `web_bridge.py`: browser input validation and result exports.
+- `QUICKSTART.md`: input instructions, default values and a colleague test checklist.
+- `Saito-sensei feedback.md`: completed improvements and pending external review.
 
-## Optional interactive user guide
+The reference notebooks supplied for this project remain attributed and
+available separately as `sources/dr_kumar_original.ipynb` and
+`sources/original_optical_reference.ipynb`. They are not included in the new
+program ZIP. Physical references and conventions are listed in the website
+and `Symbols_And_References.md`.
 
-The header's **User guide** button opens a workspace tour, the current-page
-walkthrough, calculator input and result tours, and guides for every Introduction,
-Physics and Python-cell page. **Guide this page** is available on each page.
-Guidance supports Next/Back, step selection, close/skip, replay and resume.
-Guide progress and optional section prompts are stored only in this browser.
-A tour never changes coefficients, loads an example, runs Python, exports data,
-or alters a scientific result. It can open a menu, explanatory panel or result tab.
-The application remains usable without taking a tour.
+The calculation assumes ideal transverse plane waves, normal backscattering
+and the supplied complex tensor coefficients. Unknown material coefficients
+and lattice ratios must be entered from the experiment or a suitable source.
+Numerical agreement checks test the stated model and conventions.
 
-## Optical-profile guide
+## Build and check
 
-Home includes the physics comparison of all nine profiles, explicit sample Jones
-states, return-optic matrices, scan meanings, interference terms and a table for
-choosing a reference. The guide is generated from Cell 5 of the same notebook.
-The notebook shows the overview and a calculated common-tensor comparison in
-an expandable panel; the selected-profile guide follows the optical control.
-Cell 16 exports the selected guide and effective parameters with each result.
-The guide separates equations reproduced from the references from program
-derivations and from experimental calibration. Fixed laboratory circular labels
-are distinguished from propagation-relative helicity. The core intensity law
-and separate Ag component presentation are preserved.
+```bash
+python validate_notebook.py
+python prepare_content.py
+python verify_web_bridge.py
+python verify_explicit_derivation.py
+python scripts/check_release.py
+node scripts/check_notation.cjs
+```
 
-## Scientific contract
-
-The crystal tensor is 3 by 3. Frame columns are the measurement axes in crystal
-coordinates, so R_lab = T.T * R_crystal * T. A transverse restriction follows
-the full rotation. The complex amplitude uses the conjugate detection state.
-Actual Jones states determine which optical profiles agree.
-
-The main Ag figures show separate Cartesian contribution powers as requested.
-The coherent complete-mode response and its interference terms remain in the
-audit exports. These components are not independent phonons. Orthogonal
-unresolved degenerate partners are combined as intensities.
-
-Material presets describe the stated parent phase and axes; complex
-coefficients and noncubic lattice ratios remain declared sample inputs.
-The model is an ideal transverse plane-wave calculation. It does not include
-finite numerical aperture, birefringent propagation or a microscopic
-resonance calculation inferred from a material name.
-
-## Validation
-
-The checking-procedures extension follows the supplied QWP source reference
-notebook (20 code cells, all executed in verification). Cell 21 contains
-25 structured reference procedures, including explicitly identified
-periodicity, dark-source and deliberate-error extensions. Every report
-states purpose, procedure, expected equation, scope, status and evidence.
-The current-run generalization checks the actual material/Jones inputs.
-Source-specific identities are not applied to another crystal tensor.
-
-Cell 19 displays the reports and Cell 16 exports matching JSON/Markdown.
-The website has Checking procedures and Reference validation views plus
-an introduction guide. The original upload is preserved as
-sources/dr_kumar_original.ipynb and a separate downloadable reference.
-checking_procedures_verification.json records the source execution,
-all-nine-profile checks, false-result injection tests and export equality.
-
-The notebook and extracted source share a recorded SHA-256. All 22 cells run
-successfully. The independent model suite checks tensor symmetry, full 3D
-complex contractions, reference equations, state conventions, interference,
-the implemented 21 point groups, symbolic equations and numerical edge cases.
-
-The web adapter additionally checks six presets, nine optical profiles,
-inactive conditional fields, rejection of a reflected frame, frozen-input
-comparison, ZIP integrity and PNG/PDF/SVG signatures.
-
-Browser QA covers every introduction, tutorial and physics page, direct
-calculations, model/material/surface controls, the full validation suite and
-the 18-case silicon benchmark. A browser-generated VV/VH CSV was downloaded
-and inspected. ZIP retrieval through the cloud-browser download harness timed
-out; archive contents and scientific figure formats were independently
-validated in native Python. Origin execution requires an Origin installation
-and was not performed here.
-
-Runtime snapshots are session-local. Stop terminates the Python worker and
-clears its comparisons, benchmark and validation records. A new calculation
-starts a fresh worker. Downloaded results are independent files.
-
-## GitHub Pages
-
-The `.github/workflows/pages.yml` workflow checks the Version 4 release and
-publishes `dist/` to GitHub Pages. See [GITHUB_PAGES.md](GITHUB_PAGES.md) for
-repository configuration. The scientific runtime and all assets use relative
-paths and support a repository subdirectory.
-
-## Third-party software
-
-The application self-hosts Pyodide 0.29.3, KaTeX 0.16.22 and highlight.js
-11.11.1. Their notices are retained under dist/vendor/; scientific wheels
-retain their own distribution metadata and licenses. Primary physics
-references are linked from the website.
+The GitHub Pages workflow publishes `dist/`. To prepare the separate calculator
+checkout from this release, run `python scripts/prepare_calculator_site.py
+--output /path/to/raman-tensor-calculator` on one line.
